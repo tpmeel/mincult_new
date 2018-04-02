@@ -36,12 +36,16 @@ app.get('/signupManager', (req, res) => {
 });
 
 // страница личного кабинета
-app.get('/personal', (req, res) => {
-    res.render('personal', {
+app.get('/personalProfile', (req, res) => {
+    res.render('personalProfile', {
         name: 'Иван',
         lastName: 'Иванов',
         patronymic: 'Иванович'
     });
+});
+
+app.get('/personalOlympiad', (req, res) => {
+    res.render('personalOlympiad');
 });
 
 // ========== //

@@ -1,0 +1,29 @@
+
+.olympiad__name {
+    padding-top: 20px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.olympiad__padding {
+    padding-left: 70px;
+}
+
+.accordion-menu-olympiad {
+    padding-top: 15px;
+    padding-right: 330px;
+    padding-bottom: 20px;
+}
+
+.olympiad__firstFile__text {
+    font-size: 18px;
+}
+
+.olympiad__firstFile {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.firstFile {
+
+}

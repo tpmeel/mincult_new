@@ -6,7 +6,6 @@
 
 .content__text {
     box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* тень рамки */
-    height: 400px;
     max-width: 750px;
     background: #ffffff;
     border-radius: 5px;
