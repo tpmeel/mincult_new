@@ -7,6 +7,22 @@
         <div class="row"> <!-- опять же синтаксис бутстрапа -->
             <div class="col-lg-12">
                 <div class="entry__border d-flex justify-content-end">
+
+                    <!-- пытался сделать ссыль на главную страницу в хедере, получилось гавно -->
+                    <!-- можешь раскомменттить посмотреть -->
+                    <!--
+                    <div class="mr-auto p-2 align-self-center">
+                        <a class="header__link" href="/main">
+                            Московский детско-юношеский центр экологии, краеведения и туризма
+                        </a>
+                    </div>
+                    -->
+
+                    <!-- переменная, которая отвечает за то, что залогинился ты или нет, (по дефолту нет) -->
+                    <% var islogin = false; %>
+
+                    <!-- если ты не залогинился, то отображаются кнопки вход и регистрация -->
+                    <% if (islogin == false){ %>
                     <div class="entry__border__button">
                         <a href="/signin">
                             <button type="button" class="entry__button" href=""> <!-- класс кнопки -->
@@ -22,6 +38,20 @@
                             </button>
                         </a>
                     </div>
+
+                    <!-- если залогинился, то отображается кнопка выход -->
+                    <% } else { %>
+
+                    <div class="registration__border__button">
+                        <a href="/main">
+                            <button type="button" class="registration__button" href=""> <!-- класс кнопки -->
+                                Выход
+                            </button>
+                        </a>
+                    </div>
+
+                    <% } %>
+
                 </div>
             </div>
         </div>
@@ -94,9 +124,6 @@
                             <ul class="submenuItems">
                                 <li><a href="#">олимпиада 1</a></li>
                                 <li><a href="#">олимпиада 2</a></li>
-                                <li><a href="#">олимпиада 3</a></li>
-                                <li><a href="#">олимпиада 4</a></li>
-                                <li><a href="#">олимпиада 5</a></li>
                             </ul>
                         </li>
                         <li>
@@ -105,9 +132,8 @@
                                 <i class="fa fa-chevron-down" aria-hidden="true"></i>
                             </div>
                             <ul class="submenuItems">
-                                <li><a href="#">док 1</a></li>
-                                <li><a href="#">док 2</a></li>
-                                <li><a href="#">док 3</a></li>
+                                <li><a href="#">Пользовательское соглашение</a></li>
+                                <li><a href="#">Политика обработки данных</a></li>
                             </ul>
                         </li>
                     </ul>

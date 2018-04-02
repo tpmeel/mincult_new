@@ -11,6 +11,12 @@ ul, li { /* теги, отвечающие за список */
     background: #073659; /* фон хэдэра */
 }
 
+.header__link {
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    color: #ffffff;
+}
+
 .entry__button { /* кнопка вход  */
     font-family: 'Lora', serif; /* устанавливаем шрифт */
     border: 0; /* убирает ебучую рамку */
