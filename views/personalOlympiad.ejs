@@ -1,0 +1,109 @@
+<% include partials/header %>
+
+<section id="content__personal" class="content">
+    <div id="main__content" class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <ul class="accordion-menu">
+                    <li>
+                        <a class="link" href="/">
+                            <div class="dropdownlink"><i class="fa fa-road" aria-hidden="true"></i>
+                                Главная страница
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="link" href="../trash/cabinet.html">
+                            <div class="dropdownlink"><i class="fa fa-road" aria-hidden="true"></i>
+                                Мой профиль
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <div class="dropdownlink"><i class="fa fa-quote-left" aria-hidden="true"></i>
+                            Список олимпиад
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                        <ul class="submenuItems">
+                            <li><a href="#">олимпиада 1</a></li>
+                            <li><a href="#">олимпиада 2</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a class="link" href="">
+                            <div class="dropdownlink"><i class="fa fa-road" aria-hidden="true"></i>
+                                Настройки
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="content__text__personal">
+                    <div class="olympiad__padding">
+
+                        <div class="olympiad__name">
+                            Олимпиада 1
+                        </div>
+
+                        <form action="#" method="POST" class="form__olympiad" name="olympiad">
+
+                            <div class="accordion-menu-olympiad"> <!-- для отступа сверху -->
+                                <ul class="accordion-menu">
+                                    <li>
+                                        <div class="dropdownlink"><i class="fa fa-quote-left" aria-hidden="true"></i>
+                                            Выберите номинацию
+                                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                        </div>
+                                        <ul class="submenuItems">
+                                            <li><a href="#">Экология</a></li>
+                                            <li><a href="#">Краеведение</a></li>
+                                            <li><a href="#">Туризм</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="olympiad__firstFile__text">
+                                Прикрепите word файл с данными:
+                            </div>
+
+                            <div class="olympiad__firstFile">
+                                <input type="file" class="firstFile" name="firstFile">
+                            </div>
+
+                            <div class="olympiad__secondFile__text">
+                                Прикрепите word файл с работой:
+                            </div>
+
+                            <div class="olympiad__firstFile">
+                                <input type="file" class="secondFile" name="secondFile">
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="basement" class="basement"> <!-- подвал -->
+    <div class="container"> <!--  -->
+        <div class="row">
+            <div class="col-lg-12"> <!--  -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<% include partials/footer %>
