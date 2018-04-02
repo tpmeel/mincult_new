@@ -1,0 +1,79 @@
+
+ul {
+    list-style: none;
+}
+
+a:hover { /* Принудительно убирает подчеркивание у ссылок */
+    text-decoration:none !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+.dropdownlink:hover{ /* изменение цвета при наведении мышки */
+    background: #dcdcdc;
+}
+
+.accordion-menu {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* тень рамки */
+    width: 100%;
+    max-width: 350px;
+    margin: 0px auto;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.accordion-menu li.open .dropdownlink {
+    color: #ffffff;
+    background: #073659;
+}
+.accordion-menu li.open .dropdownlink .fa-chevron-down {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.accordion-menu li:last-child .dropdownlink {
+    border-bottom: 0;
+}
+
+.dropdownlink {
+    cursor: pointer;
+    display: block;
+    padding: 15px 15px 15px 45px;
+    font-size: 20px;
+    border-bottom: 1px solid #ccc;
+    color: #212121;
+    position: relative;
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+}
+.dropdownlink i {
+    position: absolute;
+    top: 117px;
+    left: 16px;
+}
+.dropdownlink .fa-chevron-down {
+    right: 12px;
+    left: auto;
+}
+
+.submenuItems {
+    display: none;
+    background: #ffffff;
+}
+.submenuItems li {
+    border-bottom: 1px solid #B6B6B6;
+}
+
+.submenuItems a {
+    display: block;
+    color: #727272;
+    padding: 12px 12px 12px 45px;
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+}
+.submenuItems a:hover {
+    background-color: #07639a;
+    color: #fff;
+}

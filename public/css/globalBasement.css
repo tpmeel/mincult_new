@@ -1,0 +1,21 @@
+
+.basement {
+    padding-top: 70px;  /* отступ  */
+    background: #e6e6e6
+}
+
+.basement__padding {
+    padding-left: 190px;
+}
+
+.basement__links {
+    padding-right: 30px;
+}
+
+.basement__text {
+    padding-left: 65px;
+    padding-top: 20px;
+    padding-bottom: 150px;
+    font-family: 'Lora', serif;
+    color: #5c5c5c;
+}

@@ -1,0 +1,111 @@
+<% include partials/header %>
+
+<header id="header" class="header"> <!-- блок хэдер (самая верхняя часть с лого, названием организации и кнопками регистрации и входа) -->
+    <div class="container"> <!-- разбиваем хэдэр на контейнеры (синтаксис бутстрапа заставляет делать так) -->
+        <div class="row"> <!-- опять же синтаксис бутстрапа -->
+            <div class="col-lg-12">
+                <div class="entry__border d-flex justify-content-end">
+                    <div class="entry__border__button">
+                        <a href="/signin">
+                            <button type="button" class="entry__button" href=""> <!-- класс кнопки -->
+                                Выход
+                            </button>
+                        </a>
+                    </div>
+
+                    <div class="registration__border__button">
+                        <button type="button" class="registration__button" href=""> <!-- класс кнопки -->
+                            Имя Фамилия
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</header> <!-- закончился блок хэдэр -->
+
+<section id="content__personal" class="content">
+    <div id="main__content" class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <ul class="accordion-menu">
+                    <li>
+                        <a class="link" href="/">
+                            <div class="dropdownlink"><i class="fa fa-road" aria-hidden="true"></i>
+                                Главная страница
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="link" href="../trash/cabinet.html">
+                            <div class="dropdownlink"><i class="fa fa-road" aria-hidden="true"></i>
+                                Мой профиль
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <div class="dropdownlink"><i class="fa fa-quote-left" aria-hidden="true"></i>
+                            Список олимпиад
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                        <ul class="submenuItems">
+                            <li><a href="#">олимпиада 1</a></li>
+                            <li><a href="#">олимпиада 2</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a class="link" href="">
+                            <div class="dropdownlink"><i class="fa fa-road" aria-hidden="true"></i>
+                                Настройки
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="col-lg-8">
+
+                <div class="content__text__personal">
+                    <ul class="text d-flex justify-content-start" > <!-- конструкция ul li делает список -->
+                        <li class="content__about__icon"> <!-- класс департамента,  чувак в туторе сказал, что так надо писать, с двойным подчеркиванием (типо автоматическая документация, по-другому БЭМ - система, которую в яндексе придумали) -->
+                            <p>
+                                <img src="https://png.icons8.com/ultraviolet/100/000000/guest-male.png">
+                            </p>
+                        </li>
+                        <li class="content__about__text__personal"> <!-- класс названия организации -->
+                            <%= name %>
+                            <%= lastName %>
+                            <%= patronymic %>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="content__text__second">
+                    <ul class="text d-flex justify-content-start" > <!-- конструкция ul li делает список -->
+                        <li class="wor"> <!-- класс названия организации -->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="basement" class="basement"> <!-- подвал -->
+    <div class="container"> <!--  -->
+        <div class="row">
+            <div class="col-lg-12"> <!--  -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<% include partials/footer %>

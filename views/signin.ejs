@@ -1,0 +1,95 @@
+<% include partials/header %>
+
+<header id="header" class="header"> <!-- блок хэдер (самая верхняя часть с лого, названием организации и кнопками регистрации и входа) -->
+    <div class="container"> <!-- разбиваем хэдэр на контейнеры (синтаксис бутстрапа заставляет делать так) -->
+        <div class="row"> <!-- опять же синтаксис бутстрапа -->
+            <div class="col-lg-12">
+                <div class="entry__border d-flex justify-content-end">
+                    <div class="entry__border__button">
+                        <a href="/signin">
+                            <button type="button" class="entry__button" href=""> <!-- класс кнопки -->
+                                Вход
+                            </button>
+                        </a>
+                    </div>
+
+                    <div class="registration__border__button">
+                        <a href="/signup">
+                            <button type="button" class="registration__button" href=""> <!-- класс кнопки -->
+                                Регистрация
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header> <!-- закончился блок хэдэр -->
+
+<section id="signin" class="signin"> <!-- класс секции входа (все, что под кнопками вход и регистрация) -->
+    <section class="container"> <!-- все по классике -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="border__login">
+                    <div class="entry__data"> <!-- класс блока входа -->
+                        <div class="login"> <!-- класс надписи Логин -->
+                            <p class="entry__login">
+                                Логин
+                            </p>
+                        </div>
+
+                        <form action="#" method="POST" class="form"> <!-- форма для логина -->
+
+                            <label class="lblInp m-btm-40" for="mail"> <!-- лэйбл связывает форму и и вскую хрень типо текста и проч -->
+                                <input type="email" id="mail" required> <!-- вводимый тип эмйл, поле для ввода обязательно -->
+                                </input>
+                                <label for="mail">Введите логин</label> <!-- надпись в нераскрытой форме -->
+                                <i class="fa fa-envelope" aria-hidden="true">
+                                </i>
+                            </label>
+
+                            <div class="password"> <!-- класс надписи Пароль -->
+                                <p class="entry__password">
+                                    Пароль
+                                </p>
+                            </div>
+
+
+                                <label class="lblInp" for="password">
+                                    <input type="password" id="password" required>
+                                    </input>
+
+                                    <label for="password">Введите пароль</label>
+                                    <i class="fa fa-lock" ariahidden="true">
+                                    </i>
+                                </label>
+
+                            <div class="button__submit"> <!-- класс для блока кнопки -->
+                                <a href="/personal">
+                                    <button type="submit" class="form__button" href="/personal"> <!-- класс самой кнопки -->
+                                        Войти
+                                    </button>
+                                </a>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+<script >
+    $('.lblInp input').keyup(function() {
+        if($(this).val().length > 0){
+            $(this).closest('.lblInp input').addClass('filled');
+        }
+        else{
+            $(this).closest('.lblInp input').removeClass('filled');
+        }
+    });
+</script>
+
+<% include partials/footer %>

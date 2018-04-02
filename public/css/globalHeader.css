@@ -1,0 +1,63 @@
+
+/* секция хэдера */
+
+ul, li { /* теги, отвечающие за список */
+    display: block; /* преобразование в блок */
+    padding: 0; /* отступы от края (просто надо, смирись) */
+    margin: 0; /* отступы (аналогично) */
+}
+
+.header{ /* класс хэдер */
+    background: #073659; /* фон хэдэра */
+}
+
+.entry__button { /* кнопка вход  */
+    font-family: 'Lora', serif; /* устанавливаем шрифт */
+    border: 0; /* убирает ебучую рамку */
+    font-weight: 400; /* толщина шрифта */
+    background: #087bc1; /* цвет внутри кнопки */
+    color: #e3e8fd; /* цвет шрифта */
+    font-size: 20px; /* размер шрифта  */
+    width: 100px; /* ширина кнопки в длину */
+    padding: 19px 0; /* высота кнопки  */
+    cursor: pointer; /* при наведении на кнопку меняется значок */
+    -webkit-transition: all 0.4s ease-out; /* делает медленный переход при наведении */
+    transition: all 0.4s ease-out;
+}
+
+.registration__button {  /* кнопка регистрация  */
+    font-family: 'Lora', serif;
+    border: 0; /* убирает ебучую рамку */
+    font-weight: 400; /* толщина шрифта */
+    background: #086cad; /* цвет внутри кнопки */
+    color: #e3e8fd; /* цвет шрифта */
+    font-size: 20px; /* размер шрифта  */
+    width: 170px; /* ширина кнопки в длину */
+    padding: 19px 0; /* высота кнопки  */
+    cursor: pointer; /* при наведении на кнопку меняется значок */
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+
+}
+
+.registration__border__button { /* отступ между кнопками входа и регистрации */
+    padding-left: 10px;
+}
+
+.entry__button:hover { /* изменение цвета кнопки вход при наведении */
+    background-color: #07639a;
+}
+
+.registration__button:hover { /* изменение цвета кнопки регистрация при наведении */
+    background-color: #075386;
+}
+
+.headerButtons__entry a { /* класс кнопки входа */
+    font-size: 16px; /* размер шрифта кнопки регистрации */
+    font-weight: 700; /*  толщина шрифта копки входа */
+}
+
+.headerButtons__registration a { /* класс кнопки регистрации */
+    font-size: 16px; /*  шрифт кнопки регистрации */
+    font-weight: 700; /*  толщина шрифта кнопки регистрации*/
+}

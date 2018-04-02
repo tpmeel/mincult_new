@@ -1,0 +1,25 @@
+
+#content {
+    background: #f3f3f3;
+    padding-bottom: 40px;
+}
+
+.content__text {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* тень рамки */
+    height: 400px;
+    max-width: 750px;
+    background: #ffffff;
+    border-radius: 5px;
+}
+
+.content__about__title {  /* Заголовок текста о нас */
+    padding-top: 20px;
+    margin: auto;
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.content__about__text { /* Текст о нас */
+    padding-left: 55px;
+    padding-right: 10px;
+}

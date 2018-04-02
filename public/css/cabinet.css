@@ -1,0 +1,48 @@
+
+#content__personal {
+    background: #f3f3f3;
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+.content__text__personal {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* тень рамки */
+    height: 180px;
+    max-width: 750px;
+    background: #ffffff;
+    border-radius: 5px;
+}
+
+.word {
+    margin-top: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* тень рамки */
+    max-width: 750px;
+    background: #ffffff;
+    border-radius: 5px;
+    width:100%;
+    height:700px;
+
+}
+
+.content__about__icon {  /* Заголовок текста о нас */
+    padding-left: 40px; /* отступ иконки слева */
+    padding-top: 35px; /* отступ иконки справа */
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.content__about__text__personal { /* ФИО*/
+    font-size: 20px;
+    font-family: 'Roboto Slab', serif;
+    padding-left: 55px;
+    padding-top: 30px;
+}
+
+
+
+
+
+
+
+
+

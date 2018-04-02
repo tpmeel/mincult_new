@@ -1,0 +1,314 @@
+
+body { /* тело страницы логина */
+    background: #f3f3f3; /* фон */
+}
+
+.signup { /* все, что под хэдэром */
+    padding-top: 70px; /* отступ сверху */
+    padding-bottom: 1100px; /* постоянно менять надо */
+}
+
+.border__login { /* класс всей рамки для входа  */
+    margin: 0 auto; /* центрирование */
+    width: 460px; /* ширина */
+    height: 700px; /* высота */
+}
+
+.entry__login { /* класс для надписи Логин  */
+    color: #2c2c2c; /* цвет шрифта */
+    font-family: 'Lora', serif;
+    padding-top: 50px; /* отступ от верхнего края  */
+    font-size: 26px; /* размер шрифта */
+    text-align: center; /* центрирование  */
+}
+
+.entry__password { /* класс для надписи пароль  */
+    color: #2c2c2c;
+    font-family: 'Lora', serif;
+    padding-top: 50px; /* отступ от формы логина  */
+    font-size: 26px; /* размер шрифта */
+    text-align: center; /* центрирование  */
+}
+
+.entry__text { /* класс для надписи пароль  */
+    color: #2c2c2c;
+    font-family: 'Lora', serif;
+    padding-top: 50px; /* отступ от формы логина  */
+    font-size: 26px; /* размер шрифта */
+    text-align: center; /* центрирование  */
+}
+
+
+.form__button { /* форма для кнопки */
+    font-family: 'Lora', serif;
+    border: 0; /* убирает ебучую рамку */
+    font-weight: 400; /* толщина шрифта */
+    border-radius: 5px; /* радиус закругления у углов кнопки */
+    background: #086aaa; /* цвет внутри кнопки */
+    color: #ffffff;
+    font-size: 18px; /* размер шрифта  */
+    width: 230px; /* размер кнопки в длину */
+    padding: 7px 0; /* высота кнопки  */
+    text-transform: uppercase; /* преобразовани шрифта (типо caps lock) */
+    cursor: pointer; /* при наведении на кнопку меняется значок */
+    -webkit-transition: all 0.4s ease-out; /* делает медленный переход при наведении */
+    transition: all 0.4s ease-out;
+}
+
+.form__button:hover { /* изменение цвета кнопки вход при наведении */
+    background-color: #07466e;
+}
+
+.forgot__password { /* класс для кнопки забыли пароль? */
+    padding-top: 10px;
+    padding-left: 80px;
+    padding-bottom: 40px;
+}
+
+.entry__forgot__password { /* класс для текста кнопки забыли пароль? */
+    color: #7e7e7e;
+}
+
+.entry__data { /* класс блока входа */
+    background: #ffffff; /* цвет фона всей формы (раньше был голубенький(шутка про серегу)) */
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* тень рамки */
+}
+
+.accordion-menu-registration {
+    padding-top: 30px;
+}
+
+.type__of__user {
+    padding-left: 60px;
+    color: rgba(65, 65, 65, 0.6);
+    font-family: 'Lora', serif;
+}
+
+.form__login { /* класс формы логина */
+    padding-left: 0px; /* отступ от края слева, не нашел как центрировать */
+}
+
+.form__password { /* класс формы пароля */
+    padding-left: 0px; /* отступ от края слева */
+    padding-bottom: 60px; /* отступ вниз */
+}
+
+.button__submit { /* класс блока кнопки */
+    padding-top: 45px; /* отступ сверху */
+    padding-left: 30px;
+    padding-bottom: 70px; /* отступ вниз */
+}
+
+/* далее пошла форма */
+
+
+* {   /*  универсальный селектор, оформление которого применяется к каждому элементу HTML  */
+    /*  Применяется для изменения алгоритма расчета ширины и высоты элемента  */
+    box-sizing: border-box; /* Свойства width и height включают в себя значения полей и границ, но не отступов (margin)  */
+}
+.form {  /* класс для блока формы (вроде) */
+    font-size: 18px; /*  размер шрифта надписи Введите логин/пароль */
+    font-family: 'Lora', serif; /*  название шрифта */
+    width: 100%;
+    max-width: 290px; /* максимальная ширина */
+    margin: 0 auto; /* центрирование */
+    padding-top: 0px; /* отступ сверху */
+}
+.lblInp { /*  класс для самой формы */ /* расшифровка label input мне лень менять было */
+    position: relative; /*  позиционирует форму относительно ее исходного места  */
+    display: block; /* преобразование в блок */
+    height: 48px; /* высота блока */
+    cursor: text; /* тип курсора внутри */
+}
+.lblInp input { /* класс для всего, что в эту форму входит */
+    position: absolute; /* позиционирование текста внутри формы относительно родителя - lblInp */
+    bottom: 0; /* отступ текста от края формы */
+    width: 100%; /* типо ширина полная, чет такое */
+    height: 2px; /* высота закрытой формы */
+    padding-left: 25px; /* отступ текста внутри формы слева от края формы */
+    border: 0; /* убираем ебучую толщину рамки */
+    border-radius: 2px; /* радиус закругления рамки */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* тень рамки */
+    transition: all 0.3s ease; /* эффект перехода */
+    vertical-align: bottom; /* выравнивание относительно родителя */
+    font-size: 20px; /* высота шрифта внутри формы */
+}
+.lblInp input:focus, /* Псевдокласс :focus определяет стиль для элемента получающего фокус */
+.lblInp input.filled { /* класс, который добавляется к полю при раскрытии формы */
+    height: 100%;  /* задаем высоту для раскрывшейся формы */
+    outline: none; /* убираем все дополнительные свойства у раскрывшейся формы */
+}
+.lblInp input:focus + label,
+.lblInp input.filled + label {
+    position: absolute; /* позиционирование */
+    transform: translateY(-34px); /* смщение текста Введите логин/пароль при раскрытии формы */
+    font-size: 12px; /* размер шрифта текста Введите логин/пароль при раскрытии формы */
+    color: rgba(156, 156, 156, 0.6);
+}
+
+.lblInp input:focus + label + i,
+.lblInp input.filled + label + i {
+    transform: translateY(0px);
+    visibility: visible;
+    transition: transform 0.3s ease;
+}
+
+.lblInp input +label {
+    color: #919191; /* цвет текста Введите логин/пароль при закрытой форме */
+    line-height: 48px; /* межстрочный интервал текста Введите логин/пароль при закрытой форме */
+    padding-left: 3px; /* отступ влево текста Введите логин/пароль при закрытой форме */
+    transform: translateY(0px);  /* первоначальное положение текста Введите логин/пароль */
+    transition: all 0.3s ease; /* эффект перехода */
+    pointer-events: none; /* отсутствие эффектов для мыши (формальность) */
+}
+
+.lblInp input +label + i {
+    position: absolute;
+    display: block;
+    visibility: hidden;
+    left: 10px;
+    transform: translateY(10px);
+    color: #ddd;
+    z-index: 1;
+}
+
+.fa-envelope {
+    font-size: 14px;
+    top: 17px;
+}
+.fa-lock {
+    font-size: 18px;
+    top: 16px;
+}
+
+.m-btm-40 {
+    margin-bottom: 15px; /* отступ между полями для логина и пароля */
+}
+
+
+/*  далее класс для даты, сделал как даунич на костылях */
+
+
+.lblInpf { /*  класс для формы даты */
+    position: relative; /*  позиционирует форму относительно ее исходного места  */
+    display: block; /* преобразование в блок */
+    height: 48px; /* высота блока */
+    cursor: text; /* тип курсора внутри */
+}
+.lblInpf input { /* класс для всего, что в эту форму входит */
+    position: absolute; /* позиционирование текста внутри формы относительно родителя - lblInp */
+    bottom: 0; /* отступ текста от края формы */
+    width: 100%; /* типо ширина полная, чет такое */
+    height: 100%;  /* задаем высоту для раскрывшейся формы */
+    outline: none; /* убираем все дополнительные свойства у раскрывшейся формы */
+    padding-left: 25px; /* отступ текста внутри формы слева от края формы */
+    border: 0; /* убираем ебучую толщину рамки */
+    border-radius: 2px; /* радиус закругления рамки */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* тень рамки */
+    transition: all 0.3s ease; /* эффект перехода */
+    vertical-align: bottom; /* выравнивание относительно родителя */
+
+}
+
+.lblInpf input +label {
+    color: #919191; /* цвет текста Введите логин/пароль при закрытой форме */
+    line-height: 48px; /* межстрочный интервал текста Введите логин/пароль при закрытой форме */
+    padding-left: 3px; /* отступ влево текста Введите логин/пароль при закрытой форме */
+    transition: all 0.3s ease; /* эффект перехода */
+    pointer-events: none; /* отсутствие эффектов для мыши (формальность) */
+    position: absolute; /* позиционирование */
+    transform: translateY(-34px); /* смщение текста Введите логин/пароль при раскрытии формы */
+    font-size: 12px; /* размер шрифта текста Введите логин/пароль при раскрытии формы */
+    color: rgba(156, 156, 156, 0.6);
+}
+
+
+
+/*  далее css для чекбокса */
+
+
+.label-cbx {
+    user-select: none;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+.label-cbx input:checked + .checkbox {
+    border-color: #086aaa;
+}
+.label-cbx input:checked + .checkbox svg path {
+    fill: #086aaa;
+}
+.label-cbx input:checked + .checkbox svg polyline {
+    stroke-dashoffset: 0;
+}
+.label-cbx:hover .checkbox svg path {
+    stroke-dashoffset: 0;
+}
+.label-cbx .checkbox {
+    position: relative;
+    top: 2px;
+    float: left;
+    margin-right: 12px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #C8CCD4;
+    border-radius: 3px;
+}
+.label-cbx .checkbox svg {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+}
+
+.label-cbx .checkbox svg path {
+    fill: none;
+    stroke: #ffff;
+}
+
+.label-cbx .checkbox svg polyline {
+    fill: none;
+    stroke: #FFF;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 18px;
+    stroke-dashoffset: 18px;
+    transition: all 0.3s ease;
+}
+.label-cbx > span {
+    pointer-events: none;
+    vertical-align: middle;
+}
+
+.cntr {
+    padding-right: 105px;
+    padding-top: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.invisible {
+    position: absolute;
+    z-index: -1;
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+/*  далее стили для согласия с отбработкой персональных данных */
+
+.cbx__text {
+    font-size: 15px;
+}
+
+.submit__text {
+    padding-top: 7px;
+}
+
+.submit__text__input {
+    font-size: 16px;
+}
+
+
+

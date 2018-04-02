@@ -1,0 +1,41 @@
+
+ul, li { /* теги, отвечающие за список */
+    display: block; /* преобразование в блок */
+    padding: 0; /* отступы от края (просто надо, смирись) */
+    margin: 0; /* отступы (аналогично) */
+}
+
+/* секция департамента */
+
+.department { /* внешний блок департамента */
+    background: #f3f3f3;
+    padding-top: 35px; /* отступ сверху департамента */
+    padding-bottom: 35px; /* отступ снизу департамента */
+}
+
+#department__border { /* внутренний блок департамента */
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* тень рамки */
+    background: #ffffff;
+    padding-top: 40px; /* отступ от верхнего края */
+    margin: 0 auto; /* центрирование */
+    width: 1110px; /* ширина */
+    height: 250px; /* высота */
+}
+
+.logo { /* отступ логотипа сверху */
+    padding-top: 6px;
+}
+
+.organizationName__department a { /* класс названия департамента */
+    color: #0876aa;
+    font-family: 'Lora', serif;
+    font-size: 16px; /* размер шрифта в названии департамента */
+    font-weight: 700; /*  толщина шрифта в названии департамента */
+}
+
+.organizationName__organization a { /* класс названия организации */
+    font-family: 'Roboto Slab', serif; /* шрифт в названии организации */
+    font-size: 22px; /* размер шрифта в названии организации */
+    font-weight: 700; /*  толщина шрифта в названии организации */
+}
