@@ -1,6 +1,7 @@
 
 .olympiad__name {
     padding-top: 20px;
+    padding-bottom: 15px;
     font-weight: 700;
     font-size: 20px;
 }
@@ -9,14 +10,115 @@
     padding-left: 70px;
 }
 
-.accordion-menu-olympiad {
-    padding-top: 15px;
-    padding-right: 330px;
-    padding-bottom: 20px;
+/* стили для выпадающего списка */
+
+.dropcontainer {
+    position:relative;
+    font-size: 16px;
+    color: #777;
+
 }
+
+.trigger {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    color: #000000;
+    padding: 10px;
+    font-size: 16px;
+    width: 50%;
+    background: #fff;
+    display: block;
+    border: 1px solid #ccc;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.trigger:hover {
+    color: #000000;
+    background: #dcdcdc;
+    transition: all 0.4s ease-out;
+}
+
+.activetrigger {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    color: #ffffff;
+    padding: 10px;
+    font-size: 16px;
+    width: 50%;
+    background: #073659;
+    display: block;
+    border: 1px solid #ccc;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    transition: all 0.4s ease-out;
+}
+
+.activetrigger:hover {
+    background: #073659;
+    color: #ffffff;
+
+}
+
+.activetrigger:active {
+    background: #073659;
+    color: #525252;
+}
+
+.dropcontainer ul {
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-top: none;
+    background: #fff;
+    list-style-type: none;
+    margin: 0;
+    width: 50%;
+    z-index: 100;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.dropcontainer ul li {
+    padding: 5px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.dropcontainer ul li:hover {
+    background: #0876aa;
+    outline: none;
+
+}
+
+.dropcontainer ul li:first-child {
+    display: none;
+}
+
+.dropcontainer ul li:last-child {
+    border-bottom: none;
+}
+
+.dropdownhidden {
+    display: none;
+}
+
+.dropdownvisible {
+    height: auto;
+}
+
+/* закончились стили для выпадающего списка */
+
 
 .olympiad__firstFile__text {
     font-size: 18px;
+    padding-top: 20px;
 }
 
 .olympiad__firstFile {
@@ -24,6 +126,4 @@
     padding-bottom: 20px;
 }
 
-.firstFile {
 
-}

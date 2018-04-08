@@ -12,10 +12,10 @@
                             </p>
                         </div>
 
-                        <form action="#" method="POST" class="form"> <!-- форма для логина -->
+                        <form action="#" method="POST" class="form" name="entry"> <!-- форма для логина -->
 
                             <label class="lblInp m-btm-40" for="mail"> <!-- лэйбл связывает форму и и вскую хрень типо текста и проч -->
-                                <input type="email" id="mail" required> <!-- вводимый тип эмйл, поле для ввода обязательно -->
+                                <input type="email" name="login" id="mail" required> <!-- вводимый тип эмйл, поле для ввода обязательно -->
                                 </input>
                                 <label for="mail">Введите логин</label> <!-- надпись в нераскрытой форме -->
                                 <i class="fa fa-envelope" aria-hidden="true">
@@ -39,14 +39,37 @@
                                 </label>
 
                             <div class="button__submit"> <!-- класс для блока кнопки -->
-                                <a href="/views/personal">
-                                    <button type="submit" class="form__button" href="/personal"> <!-- класс самой кнопки -->
+                                <a href="#">
+                                    <button type="submit" class="form__button" href="#"> <!-- класс самой кнопки -->
                                         Войти
                                     </button>
                                 </a>
                             </div>
 
                         </form>
+
+                        <script>
+                            $("form").submit(function(e) {
+                                e.preventDefault();
+
+                                var registerForm = document.forms["entry"];
+                                var login = registerForm.elements["login"].value;
+                                var pass = registerForm.elements["password"].value;
+
+
+                                $.ajax({
+                                    url: '/',
+                                    method: 'POST',
+                                    data: {
+                                        login: login,
+                                        password: pass
+                                    },
+                                    success: function() {
+                                        console.log('SEND DATA ON SERVER');
+                                    }
+                                })
+                            })
+                        </script>
 
                     </div>
                 </div>
