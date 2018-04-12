@@ -45,8 +45,20 @@ app.get('/personalProfile', (req, res) => {
     });
 });
 
+app.get('/personalProfileExpert', (req, res) => {
+    res.render('personalProfileExpert', {
+    name: 'Иван',
+    lastName: 'Иванов',
+    patronymic: 'Иванович'
+});
+});
+
 app.get('/personalOlympiad', (req, res) => {
     res.render('personalOlympiad');
+});
+
+app.get('/personalOlympiadExpert', (req, res) => {
+    res.render('personalOlympiadExpert');
 });
 
 // ========== //

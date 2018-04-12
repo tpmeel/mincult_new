@@ -54,43 +54,31 @@
                             Олимпиада 1
                         </div>
 
-                        <form action="#" method="POST" enctype="multipart/form-data" class="form__olympiad" name="olympiad">
+                        <select name="nomination" class="turnintodropdown" onchange="getSelectValue()" required>
+                            <option selected disabled value=''>Выберите номинацию:</option>
+                            <option value="s1">Экология</option>
+                            <option value="s2">Краеведение</option>
+                            <option value="s3">Туризм</option>
+                        </select>
 
-                            <select name="nomination" class="turnintodropdown" onchange="getSelectValue()" required>
-                                <option selected disabled value=''>Выберите номинацию:</option>
-                                <option value="s1">Экология</option>
-                                <option value="s2">Краеведение</option>
-                                <option value="s3">Туризм</option>
-                            </select>
+                        <div class="doc-holder d-flex flex-column">
 
-
-                            <div class="olympiad__firstFile__text">
-                                Прикрепите word файл с данными:
+                            <div class="doc p-2">
+                                <hr>
+                                <div class="doc__content d-flex justify-content-end">
+                                    <div class="doc__img mr-auto p-2">
+                                        <img src="https://png.icons8.com/color/48/000000/word.png">
+                                    </div>
+                                    <div class="doc__link">
+                                        <a href="C:\Users\Илья\PhpstormProjects\untitled\uploads">
+                                            документ
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-
-                            <div class="olympiad__firstFile">
-                                <input type="file" class="firstFile" id="firstFile" name="firstFile" required>
-                            </div>
+                        </div>
 
 
-                            <!-- второй файл
-                           <div class="olympiad__secondFile__text">
-                               Прикрепите word файл с работой:
-                           </div>
-
-                           <div class="olympiad__firstFile">
-                               <input type="file" class="secondFile" name="secondFile" required>
-                           </div>
-                           -->
-
-                           <div class="button__submit"> <!-- класс для блока кнопки -->
-                                <a href="#">
-                                    <input value="отправить" type="submit" class="form__button" href="cabinet.html"> <!-- класс самой кнопки -->
-                                    </input>
-                                </a>
-                            </div>
-
-                        </form>
 
 
                         <!-- далее скрипт для получения выбранного значения в select (записывается в переменную selectedValue) -->
@@ -108,31 +96,6 @@
                                     }
                                 }
                             }
-                        </script>
-
-                        <script>
-                            var form = document.forms[0];
-                            form.addEventListener('submit', function (ev) {
-                                var firstFile = document.getElementById('firstFile').files[0];
-                                var oData = new FormData(form);
-
-                                // добавляем к пересылке переменную selectedValue, в которой содержится значение выбранной номинации
-                                oData.append("nomination", selectedValue);
-
-                                var oReq = new XMLHttpRequest();
-
-                                // в "/" вставь путь
-                                oReq.open("POST", "/", true);
-
-                                oReq.onload = function (oEvent) {
-
-                                    if (oReq.status == 200) {"vse vrode ok"} else {"po hodu pizda"}
-                                };
-
-                                oReq.send(oData);
-                                ev.preventDefault();
-                                
-                            }, false);
                         </script>
 
                     </div>
