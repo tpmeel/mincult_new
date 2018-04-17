@@ -31,7 +31,21 @@ ul, li { /* теги, отвечающие за список */
     transition: all 0.4s ease-out;
 }
 
-.registration__button {  /* кнопка регистрация  */
+.exit__button { /* кнопка вход  */
+    font-family: 'Lora', serif; /* устанавливаем шрифт */
+    border: 0; /* убирает ебучую рамку */
+    font-weight: 400; /* толщина шрифта */
+    background: #087bc1; /* цвет внутри кнопки */
+    color: #e3e8fd; /* цвет шрифта */
+    font-size: 20px; /* размер шрифта  */
+    width: 100px; /* ширина кнопки в длину */
+    padding: 19px 0; /* высота кнопки  */
+    cursor: pointer; /* при наведении на кнопку меняется значок */
+    -webkit-transition: all 0.4s ease-out; /* делает медленный переход при наведении */
+    transition: all 0.4s ease-out;
+}
+
+.registration__button {
     font-family: 'Lora', serif;
     border: 0; /* убирает ебучую рамку */
     font-weight: 400; /* толщина шрифта */
@@ -43,11 +57,32 @@ ul, li { /* теги, отвечающие за список */
     cursor: pointer; /* при наведении на кнопку меняется значок */
     -webkit-transition: all 0.4s ease-out;
     transition: all 0.4s ease-out;
+}
 
+.personal__button {
+    font-family: 'Lora', serif;
+    border: 0; /* убирает ебучую рамку */
+    font-weight: 400; /* толщина шрифта */
+    background: #086cad; /* цвет внутри кнопки */
+    color: #e3e8fd; /* цвет шрифта */
+    font-size: 20px; /* размер шрифта  */
+    width: 200px; /* ширина кнопки в длину */
+    padding: 19px 0; /* высота кнопки  */
+    cursor: pointer; /* при наведении на кнопку меняется значок */
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
 }
 
 .registration__border__button { /* отступ между кнопками входа и регистрации */
     padding-left: 10px;
+}
+
+.exit__button:hover { /* изменение цвета кнопки вход при наведении */
+    background-color: #07639a;
+}
+
+.personal__button:hover { /* изменение цвета кнопки регистрация при наведении */
+    background-color: #075386;
 }
 
 .entry__button:hover { /* изменение цвета кнопки вход при наведении */

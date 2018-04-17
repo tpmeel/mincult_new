@@ -71,7 +71,7 @@
                     -->
 
                     <!-- переменная, которая отвечает за то, что залогинился ты или нет, (по дефолту нет) -->
-                    <% var isLogin = false; %>
+                    <% var isLogin = true; %>
 
                     <!-- если ты не залогинился, то отображаются кнопки вход и регистрация -->
                     <% if (isLogin == false){ %>
@@ -94,9 +94,17 @@
                     <!-- если залогинился, то отображается кнопка выход -->
                     <% } else { %>
 
+                    <div class="isLogin__border__button">
+                        <a href="/personalProfile">
+                            <button type="button" class="personal__button" href=""> <!-- класс кнопки -->
+                                Личный кабинет
+                            </button>
+                        </a>
+                    </div>
+
                     <div class="registration__border__button">
                         <a href="/main">
-                            <button type="button" class="registration__button" href=""> <!-- класс кнопки -->
+                            <button type="button" class="exit__button" href=""> <!-- класс кнопки -->
                                 Выход
                             </button>
                         </a>
