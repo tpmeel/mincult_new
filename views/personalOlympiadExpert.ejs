@@ -61,35 +61,87 @@
                             <option value="s3">Туризм</option>
                         </select>
 
-                        <div class="doc-holder d-flex flex-column">
+                        <!-- Пошел реакт -->
+                        <div id="reactDocument"></div>
 
-                            <div class="doc p-2">
-                                <hr>
-                                <div class="doc__content d-flex justify-content-start">
-                                    <div class="doc__img mr-auto p-2">
-                                        <img src="https://png.icons8.com/color/48/000000/word.png">
-                                    </div>
-                                    <div class="doc__link align-self-center mr-auto p-2">
-                                        <a href="C:\Users\Илья\PhpstormProjects\untitled\uploads">
-                                            документ 1
-                                        </a>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="doc__content d-flex justify-content-start">
-                                    <div class="doc__img mr-auto p-2">
-                                        <img src="https://png.icons8.com/color/48/000000/word.png">
-                                    </div>
-                                    <div class="doc__link align-self-center mr-auto p-2">
-                                        <a href="C:\Users\Илья\PhpstormProjects\untitled\uploads">
-                                            документ 2
-                                        </a>
-                                    </div>
-                            </div>
+                        <!-- Пишем его прямо в странице пока что -->
+                        <script type="text/babel">
 
-                        </div>
+                            var arrayDocumentLink = ["link1 ","link2 ","link3 ", "link4 ","link5 ","link6 ", "link7 ","link8 ","link9 "];
+                            var arrayDocument = [];
 
+                            class DocumentExpert extends React.Component {
+                                render() {
 
+                                    if (arrayDocumentLink.length > 0) {
+
+                                        for( var documentCounter = 0; documentCounter < arrayDocumentLink.length; documentCounter++){
+                                            arrayDocument.push(
+
+                                            <div className="doc-holder d-flex flex-column">
+                                                <div className="doc p-2">
+                                                    <hr></hr>
+                                                    <div className="doc__content d-flex justify-content-start">
+                                                        <div className="doc__img mr-auto p-2">
+                                                            <img src="https://png.icons8.com/color/48/000000/word.png"></img>
+                                                        </div>
+                                                        <div className="doc__link align-self-center mr-auto p-2">
+                                                            <a href="C:\Users\Илья\PhpstormProjects\untitled\uploads">
+                                                                {
+                                                                    arrayDocumentLink[documentCounter]
+                                                                }
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    {/* так выглядит комментарий
+                                                     второй док пока уберем
+
+                                                     <hr></hr>
+                                                     <div className="doc__content d-flex justify-content-start">
+                                                     <div className="doc__img mr-auto p-2">
+                                                     <img src="https://png.icons8.com/color/48/000000/word.png"></img>
+                                                     </div>
+                                                     <div className="doc__link align-self-center mr-auto p-2">
+                                                     <a href="C:\Users\Илья\PhpstormProjects\untitled\uploads">
+                                                     документ 2
+                                                     </a>
+                                                     </div>
+                                                     </div>
+
+                                                     */}
+
+                                                </div>
+                                            </div>
+
+                                            )
+                                        }
+                                            return (
+                                                    <div>
+                                                        {arrayDocument}
+                                                    </div>
+                                            );
+
+                                    } else {
+
+                                        return (
+                                            <h1>
+                                                Документы отсутствуют
+                                            </h1>
+                                        );
+                                    }
+
+                                }
+                            }
+
+                            ReactDOM.render(
+                                <div>
+                                    <DocumentExpert />
+                                </div>,
+                                document.getElementById("reactDocument")
+                            );
+
+                        </script>
 
 
                         <!-- далее скрипт для получения выбранного значения в select (записывается в переменную selectedValue) -->
