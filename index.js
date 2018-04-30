@@ -36,6 +36,11 @@ app.get('/signupManager', (req, res) => {
     res.render('signupManager');
 });
 
+// страница регистрации научного руководителя
+app.get('/signupExpert', (req, res) => {
+    res.render('signupExpert');
+});
+
 // страница личного кабинета
 app.get('/personalProfile', (req, res) => {
     res.render('personalProfile', {
