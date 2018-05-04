@@ -69,7 +69,7 @@
                             </div>
 
                             <div class="olympiad__firstFile">
-                                <input type="file" class="firstFile" id="firstFile" name="firstFile" required>
+                                <input type="file" accept=".doc,.docx" class="firstFile" id="firstFile" name="firstFile" required>
                             </div>
 
 
@@ -80,13 +80,13 @@
                            </div>
 
                            <div class="olympiad__firstFile">
-                               <input type="file" class="secondFile" name="secondFile" required>
+                               <input type="file" accept=".doc,.docx" class="secondFile" name="secondFile" required>
                            </div>
 
 
                            <div class="button__submit"> <!-- класс для блока кнопки -->
                                 <a href="#">
-                                    <input value="отправить" type="submit" class="form__button" href="cabinet.html"> <!-- класс самой кнопки -->
+                                    <input value="отправить"  type="submit" class="form__button" href="cabinet.html"> <!-- класс самой кнопки -->
                                     </input>
                                 </a>
                             </div>
@@ -115,6 +115,7 @@
                             var form = document.forms[0];
                             form.addEventListener('submit', function (ev) {
                                 var firstFile = document.getElementById('firstFile').files[0];
+                                var secondFile = document.getElementById('secondFile').files[0];
                                 var oData = new FormData(form);
 
                                 // добавляем к пересылке переменную selectedValue, в которой содержится значение выбранной номинации
