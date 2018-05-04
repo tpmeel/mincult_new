@@ -94,6 +94,12 @@ body { /* тело страницы логина */
     padding-bottom: 60px; /* отступ вниз */
 }
 
+.form-control {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* тень рамки */
+    -webkit-transition: all 0.4s ease-out; /* делает медленный переход при наведении */
+    border: 0;
+}
+
 .button__submit { /* класс блока кнопки */
     padding-top: 45px; /* отступ сверху */
     padding-left: 30px;
@@ -311,6 +317,3 @@ body { /* тело страницы логина */
 .submit__text__input {
     font-size: 16px;
 }
-
-
-

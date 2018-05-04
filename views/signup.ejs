@@ -108,13 +108,18 @@
                                     </p>
                                 </div>
 
-                                <label class="lblInp m-btm-40" for="school"> <!--  -->
-                                    <input type="text" id="school" name="school" required> <!-- -->
-                                    </input>
-                                    <label for="mail">Введите номер школы</label> <!--  -->
-                                    <i class="fa fa-envelope" aria-hidden="true">
-                                    </i>
-                                </label>
+                                <select name="school" class="form-control dropdown" required>
+                                    <option selected disabled value=''>Выберите школу:</option>
+                                    <option>Школа</option>
+                                    <option>Лицей</option>
+                                    <option>ГБОУ</option>
+                                    <option>Частная школа</option>
+                                    <option>Кадетская школа</option>
+                                    <option>Частная школа</option>
+                                    <option>Гимназия</option>
+                                    <option>Школа</option>
+                                    <option>Лицей</option>
+                                </select>
 
                                 <div class="text"> <!-- класс -->
                                     <p class="entry__text">
@@ -122,13 +127,17 @@
                                     </p>
                                 </div>
 
-                                <label class="lblInp m-btm-40" for="level"> <!--  -->
-                                    <input type="text" id="level" name="level" required> <!-- -->
-                                    </input>
-                                    <label for="mail">Введите класс</label> <!--  -->
-                                    <i class="fa fa-envelope" aria-hidden="true">
-                                    </i>
-                                </label>
+                                <select name="lvl" class="form-control dropdown" required>
+                                    <option selected disabled value=''>Выберите класс:</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                    <option>11</option>
+                                </select>
 
 
                                 <div class="text"> <!-- Отчество -->
@@ -183,6 +192,22 @@
                         </form>
 
                         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+                        <!-- скрипт для select -->
+                        <script type="text/javascript">
+                            $(document).ready(function() {
+                                $( ".dropdown" ).select2({
+                                    theme: "bootstrap",
+                                    width: "100%",
+                                    placeholder: "Выбрать",
+                                    language: {
+                                        noResults: function(term) {
+                                            return "Не найден";
+                                        }
+                                    }
+                                });
+                            });
+                        </script>
 
                         <script>
                             $("form").submit(function(e) {
