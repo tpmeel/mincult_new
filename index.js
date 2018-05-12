@@ -26,6 +26,11 @@ app.get('/signin', (req, res) => {
     res.render('signin');
 });
 
+// страница входа
+app.get('/signinError', (req, res) => {
+    res.render('signinError');
+});
+
 // страница регистрации школьника
 app.get('/signup', (req, res) => {
     res.render('signup');

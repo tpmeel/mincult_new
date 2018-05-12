@@ -76,6 +76,10 @@ body { /* тело страницы логина */
     padding-bottom: 60px; /* отступ вниз */
 }
 
+.entry__error {
+    color: #d60008;
+}
+
 .button__submit { /* класс блока кнопки */
     padding-top: 60px; /* отступ сверху */
     padding-left: 85px;
