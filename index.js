@@ -27,8 +27,8 @@ app.get('/signin', (req, res) => {
 });
 
 // страница входа
-app.get('/signinError', (req, res) => {
-    res.render('signinError');
+app.get('/personalOlympiadSucceed', (req, res) => {
+    res.render('personalOlympiadSucceed');
 });
 
 // страница регистрации школьника

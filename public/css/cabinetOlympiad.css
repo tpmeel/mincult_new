@@ -127,3 +127,11 @@
 }
 
 
+/* далее стили при успешной загрузке файла */
+
+.document__succeed {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-weight: 400;
+    font-size: 20px;
+}
