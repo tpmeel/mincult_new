@@ -153,20 +153,17 @@
                                     type: 'POST',
                                     data: JSON.stringify(data),
                                     contentType: 'application/json',
-                                    url: 'http://localhost:3000/endpoint',
+                                    url: '/personalOlympiadExpert',
                                     success: function(data) {
+
                                         console.log('success');
                                         console.log(JSON.stringify(data));
                                                             }
                                 });
                             });
-                            document.location.href = 'http://localhost:3000/endpoint';
+                            //document.location.href = 'http://localhost:3000/endpoint';
                         });
-                        console.log(data);
                         </script>
-
-
-
                     </div>
                 </div>
             </div>
