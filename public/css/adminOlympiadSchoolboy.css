@@ -1,0 +1,123 @@
+
+.admin__olympiad__padding{
+    padding-left: 30px;
+    padding-bottom: 10px;
+}
+
+.tableSchoolboy {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+table {
+    background: #ffffff;
+    width: 100%;
+}
+
+th {
+    font-weight: normal;
+    color: #039;
+    padding: 10px 15px;
+}
+td {
+    color: #669;
+    border-top: 1px solid #e8edff;
+    padding: 10px 15px;
+}
+
+.tableSchoolboyColumnFIO {
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+    text-overflow: ellipsis; /* Добавляем многоточие */
+    width: 150px;
+}
+
+.tableSchoolboyColumnLink {
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+    text-overflow: ellipsis; /* Добавляем многоточие */
+    width: 130px;
+}
+
+.tableSchoolboyColumnExpert {
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+    text-overflow: ellipsis; /* Добавляем многоточие */
+    width: 150px;
+}
+
+.tableSchoolboyButton{ /* форма для кнопки */
+    font-family: 'Lora', serif;
+    border: 0; /* убирает ебучую рамку */
+    font-weight: 400; /* толщина шрифта */
+    border-radius: 5px; /* радиус закругления у углов кнопки */
+    background: #086aaa; /* цвет внутри кнопки */
+    color: #ffffff;
+    font-size: 14px; /* размер шрифта  */
+    width: 120px; /* размер кнопки в длину */
+    padding: 6px 0; /* высота кнопки  */
+    cursor: pointer; /* при наведении на кнопку меняется значок */
+    -webkit-transition: all 0.4s ease-out; /* делает медленный переход при наведении */
+    transition: all 0.4s ease-out;
+}
+
+.tableSchoolboyButton:hover { /* изменение цвета кнопки вход при наведении */
+    background-color: #07466e;
+}
+
+tr:hover td {background: #dcdcdc;}
+
+
+
+.schoolboyHolder {
+    padding-left: 10px;
+    padding-right: 40px;
+    padding-bottom: 30px;
+}
+
+/* класс для того, чтобы прятать div */
+.hide {
+    display: none;
+}
+
+.dataSchoolboyButton { /* форма для кнопки */
+    font-family: 'Lora', serif;
+    border: 0; /* убирает ебучую рамку */
+    font-weight: 400; /* толщина шрифта */
+    border-radius: 5px; /* радиус закругления у углов кнопки */
+    background: #086aaa; /* цвет внутри кнопки */
+    color: #ffffff;
+    font-size: 18px; /* размер шрифта  */
+    width: 250px; /* размер кнопки в длину */
+    margin-left: 70px;
+    padding: 7px 0; /* высота кнопки  */
+    text-transform: uppercase; /* преобразовани шрифта (типо caps lock) */
+    cursor: pointer; /* при наведении на кнопку меняется значок */
+    -webkit-transition: all 0.4s ease-out; /* делает медленный переход при наведении */
+    transition: all 0.4s ease-out;
+}
+
+.dataSchoolboyButton:hover { /* изменение цвета кнопки вход при наведении */
+    background-color: #07466e;
+}
+
+.cancelSchoolboyButton { /* форма для кнопки */
+    font-family: 'Lora', serif;
+    border: 0; /* убирает ебучую рамку */
+    font-weight: 400; /* толщина шрифта */
+    border-radius: 5px; /* радиус закругления у углов кнопки */
+    background: #bbbbbb; /* цвет внутри кнопки */
+    color: #ffffff;
+    font-size: 18px; /* размер шрифта  */
+    width: 150px; /* размер кнопки в длину */
+    /* margin-left: 70px; */
+    padding: 7px 0; /* высота кнопки  */
+    text-transform: uppercase; /* преобразовани шрифта (типо caps lock) */
+    cursor: pointer; /* при наведении на кнопку меняется значок */
+    -webkit-transition: all 0.4s ease-out; /* делает медленный переход при наведении */
+    transition: all 0.4s ease-out;
+}
+
+.cancelSchoolboyButton:hover { /* изменение цвета кнопки вход при наведении */
+    background-color: #6c6c6c;
+}
