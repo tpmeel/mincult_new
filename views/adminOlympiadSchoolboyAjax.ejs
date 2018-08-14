@@ -49,128 +49,277 @@
                 <div class="content__text__personal">
                     <div class="admin__olympiad__padding">
 
-                        <div class="olympiad__name">
-                            Олимпиада 1
+                        <!-- див, который мы прячем (список учеников)-->
+                        <div id="hideTable">
+
+                            <div class="olympiad__name">
+                                Олимпиада 1
+                            </div>
+
+                            <select name="nomination" class="turnintodropdown" onchange="getSelectValue()" required>
+                                <option selected disabled value=''>Выберите номинацию:</option>
+                                <option value="s1">Экология</option>
+                                <option value="s2">Краеведение</option>
+                                <option value="s3">Туризм</option>
+                            </select>
+
+
+                            <%
+                            var jsonSchoolboy =  {
+                                "users": [{
+                                    "id" : 0,
+                                    "link" : " https://www.google.ru/search?newmg",
+                                    "SchoolboyName": "Илья",
+                                    "SchoolboySurname": "Мельников",
+                                    "SchoolboyExpert" : "Павел Петрович"
+                                }, {
+                                    "id" : 1,
+                                    "link" : " https://www.google.ru/search?newmg",
+                                    "SchoolboyName": "Warface",
+                                    "SchoolboySurname": "Сила",
+                                    "SchoolboyExpert" : "Петро Порошенко"
+                                },
+                                    {
+                                    "id" : 2,
+                                    "link" : " https://www.google.ru/search?newmg",
+                                    "SchoolboyName": "json",
+                                    "SchoolboySurname": "Могила",
+                                    "SchoolboyExpert" : "Слава Онэмэ"
+                                }]
+                            }
+                            %>
+
+
+                            <table class="tableSchoolboy" id="Schoolboys">
+                                <tr>
+                                    <th>ФИО</th>
+                                    <th>Документ</th>
+                                    <th>Проверяющий</th>
+                                    <th>Редактирование</th>
+                                </tr>
+
+
+                                <% if (jsonSchoolboy.users.length > 0){
+                                for (var i = 0; i < jsonSchoolboy.users.length; i++) { %>
+
+                                <tr>
+                                    <td>
+                                        <p  class="tableSchoolboyColumnFIO">
+                                            <%= jsonSchoolboy.users[i].SchoolboyName%>
+                                            <%= jsonSchoolboy.users[i].SchoolboySurname%>
+                                        </p>
+                                    </td>
+                                    <td>
+                                       <a href="">
+                                           <p class="tableSchoolboyColumnLink">
+                                            <%= jsonSchoolboy.users[i].link%>
+                                           </p>
+                                       </a>
+                                    </td>
+                                    <td class="tableSchoolboyColumn">
+                                        <p class="tableSchoolboyColumnExpert">
+                                            <%= jsonSchoolboy.users[i].SchoolboyExpert%>
+                                        </p>
+                                    </td>
+                                    <th id="tableButton">
+                                        <button id="<%= jsonSchoolboy.users[i].id%>" class="tableSchoolboyButton" type="submit">
+                                            ИЗМЕНИТЬ
+                                        </button>
+                                    </th>
+                                </tr>
+
+                                <%  }
+                                } else { %>
+
+                                <p>
+                                    НЕТ ШКОЛЬНИКОВ
+                                </p>
+
+                                <% } %>
+
+                            </table>
+
                         </div>
 
-                        <select name="nomination" class="turnintodropdown" onchange="getSelectValue()" required>
-                            <option selected disabled value=''>Выберите номинацию:</option>
-                            <option value="s1">Экология</option>
-                            <option value="s2">Краеведение</option>
-                            <option value="s3">Туризм</option>
-                        </select>
+                        <div id="hideSchoolboy" class="hide">
 
 
-                        <%
-                        var jsonSchoolboy =  {
-                            "users": [{
-                                "id" : 0,
-                                "link" : " https://www.google.ru/search?newmg",
-                                "SchoolboyName": "Илья",
-                                "SchoolboySurname": "Мельников",
-                                "SchoolboyExpert" : "Павел Петрович"
-                            }, {
-                                "id" : 1,
-                                "link" : " https://www.google.ru/search?newmg",
-                                "SchoolboyName": "Warface",
-                                "SchoolboySurname": "Сила",
-                                "SchoolboyExpert" : "Петро Порошенко"
-                            },
-                                {
-                                "id" : 2,
-                                "link" : " https://www.google.ru/search?newmg",
-                                "SchoolboyName": "json",
-                                "SchoolboySurname": "Могила",
-                                "SchoolboyExpert" : "Слава Онэмэ"
-                            }]
-                        }
-                        %>
+                                <ul class="text d-flex justify-content-start" > <!-- конструкция ul li делает список -->
+                                    <li class="content__about__icon"> <!-- класс департамента,  чувак в туторе сказал, что так надо писать, с двойным подчеркиванием (типо автоматическая документация, по-другому БЭМ - система, которую в яндексе придумали) -->
+                                        <p>
+                                            <img src="https://png.icons8.com/ultraviolet/100/000000/guest-male.png">
+                                        </p>
+                                    </li>
+                                    <li class="content__about__text__personal"> <!-- класс названия организации -->
+                                        <%= name %>
+                                        <%= lastName %>
+                                        <%= patronymic %>
+                                    </li>
+                                </ul>
+
+                            <div class="schoolboyHolder">
 
 
-                        <table class="tableSchoolboy" id="Schoolboys">
-                            <tr>
-                                <th>ФИО</th>
-                                <th>Документ</th>
-                                <th>Проверяющий</th>
-                                <th>Редактирование</th>
-                            </tr>
+                                <table class="tableSchoolboy" id="Schoolboys">
+                                    <tr>
+                                        <td> Школа </td>
+                                        <td> <%= school %> </td>
+                                    </tr>
+                                    <tr>
+                                        <td> Класс </td>
+                                        <td> <%= lvl %> </td>
+                                    </tr>
+                                    <tr>
+                                        <td> Дата рождения </td>
+                                        <td> <%= date %> </td>
+                                    </tr>
+                                    <tr>
+                                        <td> Документ </td>
+                                        <td> <%= document %> </td>
+                                    </tr>
+                                    <tr>
+                                        <td> Номинация </td>
+                                        <td>
 
+                                            <select name="nomination" class="turnintodropdown" onchange="getSelectValue()">
+                                                <option value="s1"> <%= nomination %> </option>
+                                                <option value="s2">Краеведение</option>
+                                                <option value="s3">Туризм</option>
+                                            </select>
 
-                            <% if (jsonSchoolboy.users.length > 0){
-                            for (var i = 0; i < jsonSchoolboy.users.length; i++) { %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> Эксперт </td>
+                                        <td>
 
-                            <tr>
-                                <td>
-                                    <p  class="tableSchoolboyColumnFIO">
-                                        <%= jsonSchoolboy.users[i].SchoolboyName%>
-                                        <%= jsonSchoolboy.users[i].SchoolboySurname%>
-                                    </p>
-                                </td>
-                                <td>
-                                   <a href="">
-                                       <p class="tableSchoolboyColumnLink">
-                                        <%= jsonSchoolboy.users[i].link%>
-                                       </p>
-                                   </a>
-                                </td>
-                                <td class="tableSchoolboyColumn">
-                                    <p class="tableSchoolboyColumnExpert">
-                                        <%= jsonSchoolboy.users[i].SchoolboyExpert%>
-                                    </p>
-                                </td>
-                                <th id="tableButton">
-                                    <button id="<%= jsonSchoolboy.users[i].id%>" class="tableSchoolboyButton" type="submit">
-                                        ИЗМЕНИТЬ
-                                    </button>
-                                </th>
-                            </tr>
+                                            <select name="nomination" class="turnintodropdown" onchange="getSelectValue()">
+                                                <option value="s1"> <%= expert %> </option>
+                                                <option value="s1">Эксперт 1</option>
+                                                <option value="s2">Эксперт 2</option>
+                                                <option value="s3">Эксперт 3</option>
+                                            </select>
 
-                            <%  }
-                            } else { %>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div class="d-flex flex-row">
+                                    <div class="p-2">
+                                        <button class="dataSchoolboyButton" type="submit">
+                                            Сохранить изменения
+                                        </button>
+                                    </div>
+                                    <div class="p-2">
+                                        <button class="cancelSchoolboyButton" type="submit">
+                                            Отмена
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                            <p>
-                                НЕТ ШКОЛЬНИКОВ
-                            </p>
-
-                            <% } %>
-
-                        </table>
-
-                        <!-- скрипт для получения id кнопки -->
-                        <script>
-                        $(document).ready(function(){
-                            $('.tableSchoolboyButton').click(function(e) {
-                                var selectedButtonId =  $(this).attr('id');
-
-                                //возмзможно в этой строчке дело
-                                e.preventDefault();
-
-
-                                var data = {};
-                                data.id = selectedButtonId;
-
-                                $.ajax({
-                                    type: 'POST',
-                                    data: JSON.stringify(data),
-                                    contentType: 'application/json',
-                                    url: '/personalOlympiadExpert',
-                                    success: function(data) {
-
-                                        console.log('success');
-                                        console.log(JSON.stringify(data));
-                                                            }
-                                });
-                            });
-                            //document.location.href = 'http://localhost:3000/endpoint';
-                        });
-                        </script>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
+
+<!-- скрипт для кнопки изменить-->
+<script>
+    $(document).ready(function(){
+        $('.tableSchoolboyButton').click(function(e) {
+
+
+            // $( "#contentTableSchoolboyResponse" ).append( "" );
+
+            window.selectedButtonId =  $(this).attr('id');
+
+            // e.preventDefault();
+
+
+            var data = {};
+            data.id = selectedButtonId;
+            data.some = 'some text value';
+
+            $.ajax({
+                type: 'POST',
+                data: JSON.stringify(data),
+                contentType: 'application/json',
+                url: '/personalOlympiadExpert',
+                success: function(data) {
+
+                    var name = data.name;
+                    var lastName = data.lastName;
+                    var patronymic = data.patronymic;
+                    var school = data.school;
+                    var lvl = data.lvl;
+                    var date = data.date;
+                    var document = data.document;
+                    var nomination = data.nomination;
+                    var expert = data.expert;
+
+                    $("#hideTable").addClass("hide");
+                    $("#hideSchoolboy").removeClass("hide");
+                    console.log('success');
+                    // console.log(JSON.stringify(data));
+                }
+            });
+        });
+    });
+</script>
+
+<!-- скрипт для кнопки сохранить изменения-->
+<script>
+    $(document).ready(function(){
+        $('.dataSchoolboyButton').click(function(e) {
+
+            // var selectedButtonId =  $(this).attr('id');
+            // e.preventDefault();
+
+            var dataJson = {};
+            dataJson.id = selectedButtonId;
+            dataJson.name = name;
+            dataJson.lastName = lastName;
+            dataJson.patronymic = patronymic;
+            dataJson.school = school;
+            dataJson.lvl = lvl;
+            dataJson.date = date;
+            dataJson.document = document;
+            dataJson.nomination = nomination;
+            dataJson.expert = expert;
+
+
+            $.ajax({
+                type: 'POST',
+                data: JSON.stringify(dataJson),
+                contentType: 'application/json',
+                url: '/personalOlympiadExpert',
+                success: function(data) {
+
+                    $("#hideSchoolboy").addClass("hide");
+                    $("#hideTable").removeClass("hide");
+
+                    console.log('success');
+                    // console.log(JSON.stringify(data));
+                }
+            });
+
+        });
+    });
+</script>
+
+<!-- скрипт для кнопки отменить-->
+<script>
+    $(document).ready(function(){
+        $('.cancelSchoolboyButton').click(function(e) {
+
+            $("#hideSchoolboy").addClass("hide");
+            $("#hideTable").removeClass("hide");
+
+        });
+    });
+</script>
 
 <section id="basement" class="basement"> <!-- подвал -->
     <div class="container"> <!--  -->
