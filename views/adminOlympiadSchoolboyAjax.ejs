@@ -86,7 +86,7 @@
                                     "SchoolboySurname": "Могила",
                                     "SchoolboyExpert" : "Слава Онэмэ"
                                 }]
-                            }
+                            };
                             %>
 
 
@@ -143,17 +143,22 @@
 
                         <div id="hideSchoolboy" class="hide">
 
-
-                                <ul class="text d-flex justify-content-start" > <!-- конструкция ul li делает список -->
-                                    <li class="content__about__icon"> <!-- класс департамента,  чувак в туторе сказал, что так надо писать, с двойным подчеркиванием (типо автоматическая документация, по-другому БЭМ - система, которую в яндексе придумали) -->
+                                <ul class="text d-flex justify-content-start" >
+                                    <li class="content__about__icon">
                                         <p>
                                             <img src="https://png.icons8.com/ultraviolet/100/000000/guest-male.png">
                                         </p>
                                     </li>
-                                    <li class="content__about__text__personal"> <!-- класс названия организации -->
-                                        <%= name %>
-                                        <%= lastName %>
-                                        <%= patronymic %>
+                                    <li class="content__about__text__personal">
+                                        <div id="schoolboyName">
+                                            Имя
+                                        </div>
+                                        <div id="schoolboyLastName">
+                                            Фамилия
+                                        </div>
+                                        <div id="schoolboyPatronymic">
+                                            Отчество
+                                        </div>
                                     </li>
                                 </ul>
 
@@ -163,26 +168,46 @@
                                 <table class="tableSchoolboy" id="Schoolboys">
                                     <tr>
                                         <td> Школа </td>
-                                        <td> <%= school %> </td>
+                                        <td>
+                                            <div id="schoolboySchool">
+                                                Школа
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td> Класс </td>
-                                        <td> <%= lvl %> </td>
+                                        <td>
+                                            <div id="schoolboyLvl">
+                                                Класс
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td> Дата рождения </td>
-                                        <td> <%= date %> </td>
+                                        <td>
+                                            <div id="schoolboyDate">
+                                                Дата
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td> Документ </td>
-                                        <td> <%= document %> </td>
+                                        <td>
+                                            <div id="schoolboyDocument">
+                                                Документ
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td> Номинация </td>
                                         <td>
 
                                             <select name="nomination" class="turnintodropdown" onchange="getSelectValue()">
-                                                <option value="s1"> <%= nomination %> </option>
+                                                <option value="s1">
+                                                    <div id="schoolboyNomination">
+                                                        Номинация
+                                                    </div>
+                                                </option>
                                                 <option value="s2">Краеведение</option>
                                                 <option value="s3">Туризм</option>
                                             </select>
@@ -194,7 +219,11 @@
                                         <td>
 
                                             <select name="nomination" class="turnintodropdown" onchange="getSelectValue()">
-                                                <option value="s1"> <%= expert %> </option>
+                                                <option value="s1">
+                                                    <div id="schoolboyExpert">
+                                                        Эксперт
+                                                    </div>
+                                                </option>
                                                 <option value="s1">Эксперт 1</option>
                                                 <option value="s2">Эксперт 2</option>
                                                 <option value="s3">Эксперт 3</option>
@@ -249,15 +278,33 @@
                 url: '/personalOlympiadExpert',
                 success: function(data) {
 
-                    var name = data.name;
-                    var lastName = data.lastName;
-                    var patronymic = data.patronymic;
-                    var school = data.school;
-                    var lvl = data.lvl;
-                    var date = data.date;
-                    var document = data.document;
-                    var nomination = data.nomination;
-                    var expert = data.expert;
+                    var jsonSchoolboyName = document.getElementById("schoolboyName");
+                    jsonSchoolboyName.innerHTML = data.name;
+
+                    var jsonSchoolboyLastName = document.getElementById("schoolboyLastName");
+                    jsonSchoolboyLastName.innerHTML = data.lastName;
+
+                    var jsonSchoolboyPatronymic = document.getElementById("schoolboyPatronymic");
+                    jsonSchoolboyPatronymic.innerHTML = data.patronymic;
+
+                    var jsonSchoolboySchool = document.getElementById("schoolboySchool");
+                    jsonSchoolboySchool.innerHTML = data.school;
+
+                    var jsonSchoolboyLvl = document.getElementById("schoolboyLvl");
+                    jsonSchoolboyLvl.innerHTML = data.lvl;
+
+                    var jsonSchoolboyDate = document.getElementById("schoolboyDate");
+                    jsonSchoolboyDate.innerHTML = data.date;
+
+                    var jsonSchoolboyDocument = document.getElementById("schoolboyDocument");
+                    jsonSchoolboyDocument.innerHTML = data.document;
+
+                    var jsonSchoolboyNomination = document.getElementById("schoolboyNomination");
+                    jsonSchoolboyNomination.innerHTML = data.nomination;
+
+                    var jsonSchoolboyExpert = document.getElementById("schoolboyExpert");
+                    jsonSchoolboyExpert.innerHTML = data.expert;
+
 
                     $("#hideTable").addClass("hide");
                     $("#hideSchoolboy").removeClass("hide");
@@ -279,15 +326,12 @@
 
             var dataJson = {};
             dataJson.id = selectedButtonId;
-            dataJson.name = name;
-            dataJson.lastName = lastName;
-            dataJson.patronymic = patronymic;
-            dataJson.school = school;
-            dataJson.lvl = lvl;
-            dataJson.date = date;
-            dataJson.document = document;
-            dataJson.nomination = nomination;
-            dataJson.expert = expert;
+
+            var jsonSchoolboyNomination = document.getElementById("schoolboyNomination");
+            dataJson.nomination = jsonSchoolboyNomination.innerHTML;
+
+            var jsonSchoolboyExpert = document.getElementById("schoolboyExpert");
+            dataJson.expert = jsonSchoolboyExpert.innerHTML;
 
 
             $.ajax({
@@ -295,7 +339,7 @@
                 data: JSON.stringify(dataJson),
                 contentType: 'application/json',
                 url: '/personalOlympiadExpert',
-                success: function(data) {
+                success: function(something) {
 
                     $("#hideSchoolboy").addClass("hide");
                     $("#hideTable").removeClass("hide");
