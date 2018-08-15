@@ -254,11 +254,10 @@
     </div>
 </section>
 
+
 <!-- скрипт для кнопки изменить-->
 <script>
     $(document).ready(function(){
-
-        window.onload = function(){
 
         $('.tableSchoolboyButton').click(function(e) {
 
@@ -268,7 +267,14 @@
             window.selectedButtonId =  $(this).attr('id');
 
             // e.preventDefault();
+            $("#hideTable").addClass("hide");
+            $("#hideSchoolboy").removeClass("hide");
 
+            var jsonSchoolboyName = document.getElementById("schoolboyName");
+            jsonSchoolboyName.innerHTML = "something";
+
+            var jsonSchoolboyLastName = document.getElementById("schoolboyLastName");
+            jsonSchoolboyLastName.innerHTML = "something";
 
             var data = {};
             data.id = selectedButtonId;
@@ -281,81 +287,76 @@
                 url: '/personalOlympiadExpert',
                 success: function(data) {
 
+                    var dataParse = JSON.parse(data);
+
                     var jsonSchoolboyName = document.getElementById("schoolboyName");
-                    jsonSchoolboyName.innerHTML = data.name;
+                    jsonSchoolboyName.innerHTML = dataParse.name;
 
                     var jsonSchoolboyLastName = document.getElementById("schoolboyLastName");
-                    jsonSchoolboyLastName.innerHTML = data.lastName;
+                    jsonSchoolboyLastName.innerHTML = dataParse.lastName;
 
                     var jsonSchoolboyPatronymic = document.getElementById("schoolboyPatronymic");
-                    jsonSchoolboyPatronymic.innerHTML = data.patronymic;
+                    jsonSchoolboyPatronymic.innerHTML = dataParse.patronymic;
 
                     var jsonSchoolboySchool = document.getElementById("schoolboySchool");
-                    jsonSchoolboySchool.innerHTML = data.school;
+                    jsonSchoolboySchool.innerHTML = dataParse.school;
 
                     var jsonSchoolboyLvl = document.getElementById("schoolboyLvl");
-                    jsonSchoolboyLvl.innerHTML = data.lvl;
+                    jsonSchoolboyLvl.innerHTML = dataParse.lvl;
 
                     var jsonSchoolboyDate = document.getElementById("schoolboyDate");
-                    jsonSchoolboyDate.innerHTML = data.date;
+                    jsonSchoolboyDate.innerHTML = dataParse.date;
 
                     var jsonSchoolboyDocument = document.getElementById("schoolboyDocument");
-                    jsonSchoolboyDocument.innerHTML = data.document;
+                    jsonSchoolboyDocument.innerHTML = dataParse.document;
 
                     var jsonSchoolboyNomination = document.getElementById("schoolboyNomination");
-                    jsonSchoolboyNomination.innerHTML = data.nomination;
+                    jsonSchoolboyNomination.innerHTML = dataParse.nomination;
 
                     var jsonSchoolboyExpert = document.getElementById("schoolboyExpert");
-                    jsonSchoolboyExpert.innerHTML = data.expert;
+                    jsonSchoolboyExpert.innerHTML = dataParse.expert;
 
 
-                    $("#hideTable").addClass("hide");
-                    $("#hideSchoolboy").removeClass("hide");
+
                     console.log('success');
                     // console.log(JSON.stringify(data));
                 }
             });
         });
-        }
     });
 </script>
 
 <!-- скрипт для кнопки сохранить изменения-->
 <script>
     $(document).ready(function(){
-        window.onload = function() {
-            $('.dataSchoolboyButton').click(function (e) {
+        $('.dataSchoolboyButton').click(function(e) {
 
-                // var selectedButtonId =  $(this).attr('id');
-                // e.preventDefault();
+            // var selectedButtonId =  $(this).attr('id');
+            // e.preventDefault();
 
-                var dataJson = {};
-                dataJson.id = selectedButtonId;
+            var dataJson = {};
+            dataJson.id = selectedButtonId;
+            var jsonSchoolboyNomination = document.getElementById("schoolboyNomination");
+            dataJson.nomination = jsonSchoolboyNomination.innerHTML;
+            var jsonSchoolboyExpert = document.getElementById("schoolboyExpert");
+            dataJson.expert = jsonSchoolboyExpert.innerHTML;
 
-                var jsonSchoolboyNomination = document.getElementById("schoolboyNomination");
-                dataJson.nomination = jsonSchoolboyNomination.innerHTML;
+            $.ajax({
+                type: 'POST',
+                data: JSON.stringify(dataJson),
+                contentType: 'application/json',
+                url: '/personalOlympiadExpert',
+                success: function(something) {
 
-                var jsonSchoolboyExpert = document.getElementById("schoolboyExpert");
-                dataJson.expert = jsonSchoolboyExpert.innerHTML;
+                    $("#hideSchoolboy").addClass("hide");
+                    $("#hideTable").removeClass("hide");
 
-
-                $.ajax({
-                    type: 'POST',
-                    data: JSON.stringify(dataJson),
-                    contentType: 'application/json',
-                    url: '/personalOlympiadExpert',
-                    success: function (something) {
-
-                        $("#hideSchoolboy").addClass("hide");
-                        $("#hideTable").removeClass("hide");
-
-                        console.log('success');
-                        // console.log(JSON.stringify(data));
-                    }
-                });
-
+                    console.log('success');
+                    // console.log(JSON.stringify(data));
+                }
             });
-        }
+
+        });
     });
 </script>
 
