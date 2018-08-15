@@ -257,6 +257,9 @@
 <!-- скрипт для кнопки изменить-->
 <script>
     $(document).ready(function(){
+
+        window.onload = function(){
+
         $('.tableSchoolboyButton').click(function(e) {
 
 
@@ -313,43 +316,46 @@
                 }
             });
         });
+        }
     });
 </script>
 
 <!-- скрипт для кнопки сохранить изменения-->
 <script>
     $(document).ready(function(){
-        $('.dataSchoolboyButton').click(function(e) {
+        window.onload = function() {
+            $('.dataSchoolboyButton').click(function (e) {
 
-            // var selectedButtonId =  $(this).attr('id');
-            // e.preventDefault();
+                // var selectedButtonId =  $(this).attr('id');
+                // e.preventDefault();
 
-            var dataJson = {};
-            dataJson.id = selectedButtonId;
+                var dataJson = {};
+                dataJson.id = selectedButtonId;
 
-            var jsonSchoolboyNomination = document.getElementById("schoolboyNomination");
-            dataJson.nomination = jsonSchoolboyNomination.innerHTML;
+                var jsonSchoolboyNomination = document.getElementById("schoolboyNomination");
+                dataJson.nomination = jsonSchoolboyNomination.innerHTML;
 
-            var jsonSchoolboyExpert = document.getElementById("schoolboyExpert");
-            dataJson.expert = jsonSchoolboyExpert.innerHTML;
+                var jsonSchoolboyExpert = document.getElementById("schoolboyExpert");
+                dataJson.expert = jsonSchoolboyExpert.innerHTML;
 
 
-            $.ajax({
-                type: 'POST',
-                data: JSON.stringify(dataJson),
-                contentType: 'application/json',
-                url: '/personalOlympiadExpert',
-                success: function(something) {
+                $.ajax({
+                    type: 'POST',
+                    data: JSON.stringify(dataJson),
+                    contentType: 'application/json',
+                    url: '/personalOlympiadExpert',
+                    success: function (something) {
 
-                    $("#hideSchoolboy").addClass("hide");
-                    $("#hideTable").removeClass("hide");
+                        $("#hideSchoolboy").addClass("hide");
+                        $("#hideTable").removeClass("hide");
 
-                    console.log('success');
-                    // console.log(JSON.stringify(data));
-                }
+                        console.log('success');
+                        // console.log(JSON.stringify(data));
+                    }
+                });
+
             });
-
-        });
+        }
     });
 </script>
 
