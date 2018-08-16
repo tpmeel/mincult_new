@@ -1,4 +1,5 @@
 
+
 const express = require('express'),
     ejs = require('ejs'),
     path = require('path'),
@@ -85,6 +86,80 @@ app.get('/adminOlympiadSchoolboyPersonal', (req, res) => {
 
 app.get('/adminOlympiadSchoolboyAjax', (req, res) => {
     res.render('adminOlympiadSchoolboyAjax', {
+        name: 'Иван',
+        lastName: 'Иванов',
+        patronymic: 'Иванович',
+        school: 'ГБОУ Школа №228',
+        lvl: '9',
+        date: '12.09.1999',
+        document: 'http://localhost:3000',
+        nomination: 'География',
+        expert: 'Зубенко Михаил Петрович'
+    });
+});
+app.post('/personalOlympiad', (req, res) => {
+
+    console.log(`req.body is ${req.body}`);
+    console.log(`req.body.id is ${req.body.id}`);
+
+    res.json({
+        name: 'some',
+        lastName: 'SomeLastName',
+        patronymic: 'SomePtronymic',
+        school: 'GBOU 2101',
+        lvl: '9',
+        date: '21.09.2000',
+        document: 'http://localhost',
+        nomination: 'Medicine',
+        expert: 'Vasya Pupkin'
+    });
+});
+
+app.post('/personalOlympiadExpert', (req, res) => {
+
+    console.log(`req.body is ${req.body}`);
+    console.log(`req.body.id is ${req.body.id}`);
+
+    res.json({
+        nominations: [
+            'firstNomination',
+            'secondNomination',
+            'thirdNomination'
+        ],
+        listOfExperts: [
+            {
+                name: '1ExpertName',
+                lastName: '1ExpertLastName'
+            },
+            {
+                name: '2ExpertName',
+                lastName: '2ExpertLastName'
+            },
+            {
+                name: '3ExpertName',
+                lastName: '3ExpertLastName'
+            },
+            {
+                name: '4ExpertName',
+                lastName: '4ExpertLastName'
+            },
+            {
+                name: '5ExpertName',
+                lastName: '5ExpertLastName'
+            }
+
+        ],
+        schoolboy: {
+            name: 'some',
+            lastName: 'SomeLastName',
+            patronymic: 'SomePtronymic',
+            school: 'GBOU 2101',
+            lvl: '9',
+            date: '21.09.2000',
+            document: 'http://localhost',
+            nomination: 'Geography',
+            expert: 'Vasya Pupkin'
+        }
     });
 });
 
@@ -103,30 +178,6 @@ app.post('/personalOlympiadExpert', (req, res) => {
 // вообще должны тут быть данные
     console.log(`req.body is: ${req.body}`);
 // req.body.переменная где переменная - название того, что отправляешь с фронта
-// например:
-// —-----------------------------------------------------------
-// $(document).ready(function(){
-// $('.tableSchoolboyButton').click(function(e) {
-// var selectedButtonId = $(this).attr('id');
-// //возмзможно в этой строчке дело
-// e.preventDefault();
-// var data = {};
-// data.id = selectedButtonId;
-// data.some = 'some text value';
-// $.ajax({
-// type: 'POST',
-// data: JSON.stringify(data),
-// contentType: 'application/json',
-// url: '/admin',
-// success: function(data) {
-// console.log('success');
-// console.log(JSON.stringify(data));
-// }
-// });
-// });
-// });
-// —------------------------------------------------------------
-// тут отправляется объект data, тогда ниже нужно написать req.body.data в обоих местах
     console.log(`req.body.data ${req.body.data}`);
 
 });
@@ -136,3 +187,4 @@ app.post('/personalOlympiadExpert', (req, res) => {
 app.listen(port, () => {
     console.log('Приложение доступно по адресу http://localhost:'+port);
 });
+
