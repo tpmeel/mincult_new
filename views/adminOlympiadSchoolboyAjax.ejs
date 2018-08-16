@@ -311,7 +311,8 @@
 
 <script>
     var selectNomination = document.getElementById('selectNomination');
-    window.selectedValueNomination;
+    window.selectedValueNomination = selectNomination.options[0];
+    console.log(selectedValueNomination);
 
     function getSelectValueNomination() {
         for (var i = 0; i < selectNomination.options.length; i++) {
@@ -324,7 +325,8 @@
     }
 
     var selectExpert = document.getElementById('selectExpert');
-    window.selectedValueExpert;
+    window.selectedValueExpert = selectExpert.options[0];
+    console.log(selectedValueExpert);
 
     function getSelectValueExpert() {
         for (var i = 0; i < selectExpert.options.length; i++) {
@@ -360,6 +362,9 @@
                     $("#hideSchoolboy").addClass("hide");
                     $("#hideTable").removeClass("hide");
 
+                    $( '#selectExpert, #selectNomination' ).find( 'option' )
+                        .remove()
+
                     console.log('success');
                 }
             });
@@ -376,6 +381,9 @@
             $("#hideSchoolboy").addClass("hide");
             $("#hideTable").removeClass("hide");
 
+            $( '#selectExpert, #selectNomination' ).find( 'option' )
+                .remove()
+
         });
     });
 </script>
@@ -390,3 +398,4 @@
 </section>
 
 <% include partials/footer %>
+
