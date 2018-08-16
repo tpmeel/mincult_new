@@ -56,7 +56,7 @@
                                 Олимпиада 1
                             </div>
 
-                            <select name="nomination" class="turnintodropdown" onchange="getSelectValue()" required>
+                            <select class="turnintodropdown" onchange="getSelectValue()" required>
                                 <option selected disabled value=''>Выберите номинацию:</option>
                                 <option value="s1">Экология</option>
                                 <option value="s2">Краеведение</option>
@@ -202,14 +202,7 @@
                                         <td> Номинация </td>
                                         <td>
 
-                                            <select name="nomination" class="turnintodropdown" onchange="getSelectValue()">
-                                                <option value="s1">
-                                                    <div id="schoolboyNomination">
-                                                        Номинация
-                                                    </div>
-                                                </option>
-                                                <option value="s2">Краеведение</option>
-                                                <option value="s3">Туризм</option>
+                                            <select class="selectNomination" id="selectNomination" onchange="getSelectValueNomination()">
                                             </select>
 
                                         </td>
@@ -218,15 +211,7 @@
                                         <td> Эксперт </td>
                                         <td>
 
-                                            <select name="nomination" class="turnintodropdown" onchange="getSelectValue()">
-                                                <option value="s1">
-                                                    <div id="schoolboyExpert">
-                                                        Эксперт
-                                                    </div>
-                                                </option>
-                                                <option value="s1">Эксперт 1</option>
-                                                <option value="s2">Эксперт 2</option>
-                                                <option value="s3">Эксперт 3</option>
+                                            <select class="selectExpert" id="selectExpert" onchange="getSelectValueExpert()">
                                             </select>
 
                                         </td>
@@ -246,13 +231,14 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<!-- скрипт для получения выбранного option -->
 
 
 <!-- скрипт для кнопки изменить-->
@@ -265,16 +251,9 @@
             // $( "#contentTableSchoolboyResponse" ).append( "" );
 
             window.selectedButtonId =  $(this).attr('id');
-
             // e.preventDefault();
-            $("#hideTable").addClass("hide");
-            $("#hideSchoolboy").removeClass("hide");
 
-            var jsonSchoolboyName = document.getElementById("schoolboyName");
-            jsonSchoolboyName.innerHTML = "something";
 
-            var jsonSchoolboyLastName = document.getElementById("schoolboyLastName");
-            jsonSchoolboyLastName.innerHTML = "something";
 
             var data = {};
             data.id = selectedButtonId;
@@ -287,43 +266,75 @@
                 url: '/personalOlympiadExpert',
                 success: function(data) {
 
-                    var dataParse = JSON.parse(data);
-
                     var jsonSchoolboyName = document.getElementById("schoolboyName");
-                    jsonSchoolboyName.innerHTML = dataParse.name;
+                    jsonSchoolboyName.innerHTML = data.schoolboy.name;
 
                     var jsonSchoolboyLastName = document.getElementById("schoolboyLastName");
-                    jsonSchoolboyLastName.innerHTML = dataParse.lastName;
+                    jsonSchoolboyLastName.innerHTML = data.schoolboy.lastName;
 
                     var jsonSchoolboyPatronymic = document.getElementById("schoolboyPatronymic");
-                    jsonSchoolboyPatronymic.innerHTML = dataParse.patronymic;
+                    jsonSchoolboyPatronymic.innerHTML = data.schoolboy.patronymic;
 
                     var jsonSchoolboySchool = document.getElementById("schoolboySchool");
-                    jsonSchoolboySchool.innerHTML = dataParse.school;
+                    jsonSchoolboySchool.innerHTML = data.schoolboy.school;
 
                     var jsonSchoolboyLvl = document.getElementById("schoolboyLvl");
-                    jsonSchoolboyLvl.innerHTML = dataParse.lvl;
+                    jsonSchoolboyLvl.innerHTML = data.schoolboy.lvl;
 
                     var jsonSchoolboyDate = document.getElementById("schoolboyDate");
-                    jsonSchoolboyDate.innerHTML = dataParse.date;
+                    jsonSchoolboyDate.innerHTML = data.schoolboy.date;
 
                     var jsonSchoolboyDocument = document.getElementById("schoolboyDocument");
-                    jsonSchoolboyDocument.innerHTML = dataParse.document;
+                    jsonSchoolboyDocument.innerHTML = data.schoolboy.document;
 
-                    var jsonSchoolboyNomination = document.getElementById("schoolboyNomination");
-                    jsonSchoolboyNomination.innerHTML = dataParse.nomination;
+                    $( '.selectNomination' ).append( '<option value="' + data.schoolboy.nomination + '">' + data.schoolboy.nomination + '</option>' );
+                    $( '.selectExpert' ).append( '<option value="' + data.schoolboy.expert + '">' + data.schoolboy.expert + '</option>' );
 
-                    var jsonSchoolboyExpert = document.getElementById("schoolboyExpert");
-                    jsonSchoolboyExpert.innerHTML = dataParse.expert;
+                    for ( var i = 0; i < data.nominations.length; i++){
+                        $( '.selectNomination' ).append( '<option value="' + data.nominations[i] + '">' + data.nominations[i] + '</option>');
+                    }
 
+                    for ( var i = 0; i < data.listOfExperts.length; i++){
+                        $( '.selectExpert' ).append( '<option value="' + data.listOfExperts[i].name +' '+ data.listOfExperts[i].lastName + '">' + data.listOfExperts[i].name +' '+ data.listOfExperts[i].lastName + '</option>');
+                    }
 
+                    $("#hideTable").addClass("hide");
+                    $("#hideSchoolboy").removeClass("hide");
 
                     console.log('success');
-                    // console.log(JSON.stringify(data));
+
                 }
             });
         });
     });
+</script>
+
+<script>
+    var selectNomination = document.getElementById('selectNomination');
+    window.selectedValueNomination;
+
+    function getSelectValueNomination() {
+        for (var i = 0; i < selectNomination.options.length; i++) {
+            var option = selectNomination.options[i];
+            if(option.selected) {
+                selectedValueNomination = option.value;
+                console.log(selectedValueNomination);
+            }
+        }
+    }
+
+    var selectExpert = document.getElementById('selectExpert');
+    window.selectedValueExpert;
+
+    function getSelectValueExpert() {
+        for (var i = 0; i < selectExpert.options.length; i++) {
+            var option = selectExpert.options[i];
+            if(option.selected) {
+                selectedValueExpert = option.value;
+                console.log(selectedValueExpert);
+            }
+        }
+    }
 </script>
 
 <!-- скрипт для кнопки сохранить изменения-->
@@ -336,23 +347,20 @@
 
             var dataJson = {};
             dataJson.id = selectedButtonId;
-            var jsonSchoolboyNomination = document.getElementById("schoolboyNomination");
-            dataJson.nomination = jsonSchoolboyNomination.innerHTML;
-            var jsonSchoolboyExpert = document.getElementById("schoolboyExpert");
-            dataJson.expert = jsonSchoolboyExpert.innerHTML;
+            dataJson.nomination = selectedValueNomination;
+            dataJson.expert = selectedValueExpert;
 
             $.ajax({
                 type: 'POST',
                 data: JSON.stringify(dataJson),
                 contentType: 'application/json',
-                url: '/personalOlympiadExpert',
+                url: '/personalOlympiad',
                 success: function(something) {
 
                     $("#hideSchoolboy").addClass("hide");
                     $("#hideTable").removeClass("hide");
 
                     console.log('success');
-                    // console.log(JSON.stringify(data));
                 }
             });
 
