@@ -1,5 +1,4 @@
 
-
 const express = require('express'),
     ejs = require('ejs'),
     path = require('path'),
@@ -97,6 +96,7 @@ app.get('/adminOlympiadSchoolboyAjax', (req, res) => {
         expert: 'Зубенко Михаил Петрович'
     });
 });
+
 app.post('/personalOlympiad', (req, res) => {
 
     console.log(`req.body is ${req.body}`);
@@ -115,7 +115,7 @@ app.post('/personalOlympiad', (req, res) => {
     });
 });
 
-app.post('/personalOlympiadExpert', (req, res) => {
+app.post('/personalOlympiadSchoolboy', (req, res) => {
 
     console.log(`req.body is ${req.body}`);
     console.log(`req.body.id is ${req.body.id}`);
@@ -129,23 +129,28 @@ app.post('/personalOlympiadExpert', (req, res) => {
         listOfExperts: [
             {
                 name: '1ExpertName',
-                lastName: '1ExpertLastName'
+                lastName: '1ExpertLastName',
+                idExpert: 1
             },
             {
                 name: '2ExpertName',
-                lastName: '2ExpertLastName'
+                lastName: '2ExpertLastName',
+                idExpert: 2
             },
             {
                 name: '3ExpertName',
-                lastName: '3ExpertLastName'
+                lastName: '3ExpertLastName',
+                idExpert: 3
             },
             {
                 name: '4ExpertName',
-                lastName: '4ExpertLastName'
+                lastName: '4ExpertLastName',
+                idExpert: 4
             },
             {
                 name: '5ExpertName',
-                lastName: '5ExpertLastName'
+                lastName: '5ExpertLastName',
+                idExpert: 5
             }
 
         ],
@@ -158,8 +163,58 @@ app.post('/personalOlympiadExpert', (req, res) => {
             date: '21.09.2000',
             document: 'http://localhost',
             nomination: 'Geography',
-            expert: 'Vasya Pupkin'
+            expert:
+                {
+                    name: 'Vasya',
+                    lastName: 'Pupkin',
+                    idExpert: 0
+                }
+
         }
+    });
+});
+
+app.get('/adminOlympiadExpertAjax', (req, res) => {
+    res.render('adminOlympiadExpertAjax');
+});
+
+app.post('/personalOlympiadExpert', (req, res) => {
+
+    console.log(`req.body is ${req.body}`);
+    console.log(`req.body.id is ${req.body.id}`);
+
+    res.json({
+        nominations: [
+            'firstNomination',
+            'secondNomination',
+            'thirdNomination'
+        ],
+        listOfExperts: [
+
+        ],
+        expert: {
+            name: 'Михаил',
+            lastName: 'Петрович',
+            patronymic: 'Зубенко',
+            placeOfWork: 'AVTOVAZ',
+            position: 'Рабочий',
+            date: '21.09.2000',
+            document: 'http://localhost',
+            nomination: 'Geography',
+            status: 'подтвержден'
+        }
+    });
+});
+
+app.post('/personalOlympiadSucceed', (req, res) => {
+
+    console.log(`req.body is ${req.body}`);
+    console.log(`req.body.id is ${req.body.id}`);
+
+    res.json({
+        nomination: 'some',
+        idExpert: 0,
+        status: 'подтвержден'
     });
 });
 
@@ -187,4 +242,3 @@ app.post('/personalOlympiadExpert', (req, res) => {
 app.listen(port, () => {
     console.log('Приложение доступно по адресу http://localhost:'+port);
 });
-
