@@ -16,7 +16,7 @@
                     <li>
                         <a class="link" href="../trash/cabinet.html">
                             <div class="dropdownlink"><i class="fa fa-road" aria-hidden="true"></i>
-                                Мой профиль
+                                Список экспертов
                                 <i class="fa fa-chevron-down" aria-hidden="true"></i>
                             </div>
                         </a>
@@ -33,15 +33,6 @@
                         </ul>
                     </li>
 
-                    <li>
-                        <a class="link" href="">
-                            <div class="dropdownlink"><i class="fa fa-road" aria-hidden="true"></i>
-                                Настройки
-                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                            </div>
-                        </a>
-                    </li>
-
                 </ul>
             </div>
 
@@ -55,13 +46,6 @@
                             <div class="olympiad__name">
                                 Олимпиада 1
                             </div>
-
-                            <select class="turnintodropdown" onchange="getSelectValue()" required>
-                                <option selected disabled value=''>Выберите номинацию:</option>
-                                <option value="s1">Экология</option>
-                                <option value="s2">Краеведение</option>
-                                <option value="s3">Туризм</option>
-                            </select>
 
 
                             <%
@@ -288,14 +272,14 @@
                     jsonSchoolboyDocument.innerHTML = data.schoolboy.document;
 
                     $( '.selectNomination' ).append( '<option value="' + data.schoolboy.nomination + '">' + data.schoolboy.nomination + '</option>' );
-                    $( '.selectExpert' ).append( '<option value="' + data.schoolboy.expert + '">' + data.schoolboy.expert + '</option>' );
+                    $( '.selectExpert' ).append( '<option value="' + data.schoolboy.expert.idExpert + '">' + data.schoolboy.expert.name + ' ' + data.schoolboy.expert.lastName + '</option>' );
 
                     for ( var i = 0; i < data.nominations.length; i++){
                         $( '.selectNomination' ).append( '<option value="' + data.nominations[i] + '">' + data.nominations[i] + '</option>');
                     }
 
                     for ( var i = 0; i < data.listOfExperts.length; i++){
-                        $( '.selectExpert' ).append( '<option value="' + data.listOfExperts[i].name +' '+ data.listOfExperts[i].lastName + '">' + data.listOfExperts[i].name +' '+ data.listOfExperts[i].lastName + '</option>');
+                        $( '.selectExpert' ).append( '<option value="' + data.listOfExperts[i].idExpert + '">' + data.listOfExperts[i].name +' '+ data.listOfExperts[i].lastName + '</option>');
                     }
 
                     $("#hideTable").addClass("hide");
