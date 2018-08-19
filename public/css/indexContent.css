@@ -78,3 +78,26 @@
     padding-top: 20px;
     padding-bottom: 40px;
 }
+
+.newsMainButtonMore {
+    margin-bottom: 30px;
+    margin-left: 300px;
+    font-family: 'Lora', serif;
+    border: 0; /* убирает ебучую рамку */
+    font-weight: 400; /* толщина шрифта */
+    border-radius: 5px; /* радиус закругления у углов кнопки */
+    background: #cbcbcb; /* цвет внутри кнопки */
+    color: #ffffff;
+    font-size: 18px; /* размер шрифта  */
+    width: 150px; /* размер кнопки в длину */
+    padding: 7px 0; /* высота кнопки  */
+    text-transform: uppercase; /* преобразовани шрифта (типо caps lock) */
+    cursor: pointer; /* при наведении на кнопку меняется значок */
+    -webkit-transition: all 0.4s ease-out; /* делает медленный переход при наведении */
+    transition: all 0.4s ease-out;
+}
+
+.newsMainButtonMore:hover { /* изменение цвета кнопки вход при наведении */
+    background-color: #6c6c6c;
+}
+
