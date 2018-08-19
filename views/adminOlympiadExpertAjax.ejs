@@ -51,18 +51,18 @@
                             <%
                             var jsonListOfExperts =  {
                                 "ListOfExperts": [{
-                                    "idExpert" : 0,
+                                    "idE" : 0,
                                     "name" : " Павел",
                                     "surname": "Петрович",
                                     "status": "подтвержден"
                                 }, {
-                                    "idExpert" : 1,
+                                    "idE" : 1,
                                     "name" : " Сергей",
                                     "surname": " Михайлович",
                                     "status": "подтвержден"
                                 },
                                     {
-                                    "idExpert" : 2,
+                                    "idE" : 2,
                                     "name" : "Евгения",
                                     "surname": "Кривенцова",
                                     "status": "не подтвержден"
@@ -95,7 +95,7 @@
                                            </p>
                                     </td>
                                     <th id="tableButton">
-                                        <button id="<%= jsonListOfExperts.ListOfExperts[i].idExpert%>" class="tableSchoolboyButton" type="submit">
+                                        <button id="<%= jsonListOfExperts.ListOfExperts[i].idE%>" class="tableSchoolboyButton" type="submit">
                                             ИЗМЕНИТЬ
                                         </button>
                                     </th>
@@ -243,22 +243,22 @@
                     jsonSchoolboyName.innerHTML = data.expert.name;
 
                     var jsonSchoolboyLastName = document.getElementById("schoolboyLastName");
-                    jsonSchoolboyLastName.innerHTML = data.expert.lastName;
+                    jsonSchoolboyLastName.innerHTML = data.expert.surname;
 
                     var jsonSchoolboyPatronymic = document.getElementById("schoolboyPatronymic");
                     jsonSchoolboyPatronymic.innerHTML = data.expert.patronymic;
 
                     var jsonSchoolboySchool = document.getElementById("schoolboySchool");
-                    jsonSchoolboySchool.innerHTML = data.expert.school;
+                    jsonSchoolboySchool.innerHTML = data.expert.placeOfWork;
 
                     var jsonSchoolboyLvl = document.getElementById("schoolboyLvl");
-                    jsonSchoolboyLvl.innerHTML = data.expert.lvl;
+                    jsonSchoolboyLvl.innerHTML = data.expert.position;
 
                     var jsonSchoolboyDate = document.getElementById("schoolboyDate");
-                    jsonSchoolboyDate.innerHTML = data.expert.date;
+                    jsonSchoolboyDate.innerHTML = data.expert.dateOfBirth;
 
                     var jsonSchoolboyDocument = document.getElementById("schoolboyDocument");
-                    jsonSchoolboyDocument.innerHTML = data.expert.document;
+                    jsonSchoolboyDocument.innerHTML = data.expert.link;
 
                     $( '.selectNomination' ).append( '<option value="' + data.expert.nomination + '">' + data.expert.nomination + '</option>' );
 
@@ -324,7 +324,7 @@
             // e.preventDefault();
 
             var dataJson = {};
-            dataJson.idExpert = selectedButtonId;
+            dataJson.idE = selectedButtonId;
             dataJson.nomination = selectedValueNomination;
             dataJson.status = selectedValueExpert;
 
@@ -374,3 +374,4 @@
 </section>
 
 <% include partials/footer %>
+
