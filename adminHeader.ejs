@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--
+         1 правило - никакого транслита в названии переменных и классов (если не знаешь как по английски берешь блять и гуглишь)0)
+         2 правило - сохранять табуляцию
+         3 правило - максимально все комментировать
+     -->
+
+    <meta charset="UTF-8">  <!-- все по стандарту -->
+    <meta name="viewport" content="width-device-width, user-scalable-no, initial-scale-1.0, maximum-scale-1.0, minimum-scale-1.0"> <!-- для корректного отображения на разных устройствах -->
+
+    <title>Mincult</title>
+    <!-- подключаем шрифты  -->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Roboto+Slab" rel="stylesheet">
+
+    <!-- подключаем библиотеку иконок (три полоски в шторке) -->
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <!-- подключаем css бутстрапчик который будет лежать в папке css (обязательно должен быть над всеми другими стилями вроде как) -->
+    <link rel="stylesheet" href="/public/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/public/cabinet.css">
+
+    <link rel="stylesheet" href="/public/cabinetOlympiad.css">
+
+    <link rel="stylesheet" href="/public/cabinetOlympiadExpert.css">
+
+    <link rel="stylesheet" href="/public/adminOlympiadSchoolboy.css">
+    <link rel="stylesheet" href="/public/adminOlympiadExpert.css">
+    <link rel="stylesheet" href="/public/adminNews.css">
+
+    <link rel="stylesheet" href="/public/login.css">
+
+    <link rel="stylesheet" href="/public/registration.css">
+
+    <!-- подключаем глобальный css для хедера -->
+      <link rel="stylesheet" href="/public/globalHeader.css">
+
+    <!-- подключаем css для хедера index.html -->
+    <link rel="stylesheet" href="/public/indexHeader.css">
+
+    <!-- подключаем css для меню -->
+    <link rel="stylesheet" href="/public/globalMenu.css">
+
+    <!-- подключаем css для контента index.html -->
+    <link rel="stylesheet" href="/public/indexContent.css">
+
+    <!-- подключаем css для подвала на главной странице -->
+    <link rel="stylesheet" href="/public/globalBasement.css">
+
+    <!-- подключаем ссаное джеквери -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/js/IndexMenu.js"></script>
+
+    <!-- подключаем get rect -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+
+    <!-- подключаем плагин select2 для выбора школы/универа -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-css/1.4.6/select2-bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+
+    <!-- <script type="text/babel" src="personalOlympiadExpertReact"></script> -->
+
+</head>
+
+<body>
+
+<header id="header" class="header"> <!-- блок хэдер  -->
+    <div class="container"> <!-- разбиваем хэдэр на контейнеры (синтаксис бутстрапа заставляет делать так) -->
+        <div class="row"> <!-- опять же синтаксис бутстрапа -->
+            <div class="col-lg-12">
+                <div class="entry__border d-flex justify-content-end">
+
+                    <!-- пытался сделать ссыль на главную страницу в хедере, получилось гавно -->
+                    <!-- можешь раскомменттить посмотреть -->
+                    <!--
+                    <div class="mr-auto p-2 align-self-center">
+                        <a class="header__link" href="/main">
+                            Московский детско-юношеский центр экологии, краеведения и туризма
+                        </a>
+                    </div>
+                    -->
+
+                    <!-- переменная, которая отвечает за то, что залогинился ты или нет, (по дефолту нет) -->
+                    <% var isLogin = true; %>
+
+                    <!-- если ты не залогинился, то отображаются кнопки вход и регистрация -->
+                    <% if (isLogin == false){ %>
+                    <div class="mr-auto p-2">
+                        <img src="views/images/1JwhXKBYfbg.jpg">
+                    </div>
+                    <div class="p-2">
+                        <div class="entry__border__button">
+                            <a href="/signin">
+                                <button type="button" class="entry__button" href=""> <!-- класс кнопки -->
+                                    Вход
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-2">
+                        <div class="registration__border__button">
+                            <a href="/signup">
+                                <button type="button" class="registration__button" href=""> <!-- класс кнопки -->
+                                    Регистрация
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- если залогинился, то отображается кнопка выход -->
+                    <% } else { %>
+
+                    <div class="isLogin__border__button">
+                        <a href="/adminOlympiadSchoolboyAjax">
+                            <button type="button" class="personal__button" href=""> <!-- класс кнопки -->
+                                Личный кабинет
+                            </button>
+                        </a>
+                    </div>
+
+                    <div class="registration__border__button">
+                        <a href="/main">
+                            <button type="button" class="exit__button" href=""> <!-- класс кнопки -->
+                                Выход
+                            </button>
+                        </a>
+                    </div>
+
+                    <% } %>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header> <!-- закончился блок хэдэр -->
+    
