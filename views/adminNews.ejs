@@ -1,4 +1,4 @@
-<% include partials/adminHeader %>
+als/adminHeader %>
 
 <section id="content__personal" class="content">
     <div id="main__content" class="container">
@@ -184,11 +184,13 @@
 <!-- скрипт для кнопки изменить-->
 <script>
 
+    window.selectedButtonId = "";
+
     $(document).ready(function(){
 
         $('.tableSchoolboyButton').click(function(e) {
 
-            window.selectedButtonId =  $(this).attr('id');
+            selectedButtonId =  $(this).attr('id');
             // e.preventDefault();
 
 
@@ -212,6 +214,7 @@
 
                     var jsonNewsDate = document.getElementById("hideNewsFormDate");
                     jsonNewsDate.innerHTML = data.date;
+                    
 
                     console.log('success');
 
@@ -231,6 +234,8 @@
 
 <!-- скрипт для кнопки создать новость-->
 <script>
+    
+    selectedButtonId = "";
 
     window.today = new Date();
     var dd = today.getDate();
@@ -294,6 +299,7 @@
 
 
                     console.log('success');
+                    console.log(selectedButtonId);
                 }
             });
 
@@ -325,4 +331,3 @@
 </section>
 
 <% include partials/footer %>
-
