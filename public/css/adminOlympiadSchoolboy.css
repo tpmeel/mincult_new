@@ -121,3 +121,22 @@ tr:hover td {background: #dcdcdc;}
 .cancelSchoolboyButton:hover { /* изменение цвета кнопки вход при наведении */
     background-color: #6c6c6c;
 }
+
+
+.tableExpertColumnFIO {
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+    text-overflow: ellipsis; /* Добавляем многоточие */
+    width: 200px;
+}
+
+.tableExpertColumnStatus {
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+    text-overflow: ellipsis; /* Добавляем многоточие */
+    width: 260px;
+}
+
+
+
+
