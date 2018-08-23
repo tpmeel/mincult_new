@@ -1,4 +1,5 @@
 
+
 #content {
     background: #f3f3f3;
     padding-bottom: 40px;
@@ -100,4 +101,3 @@
 .newsMainButtonMore:hover { /* изменение цвета кнопки вход при наведении */
     background-color: #6c6c6c;
 }
-
