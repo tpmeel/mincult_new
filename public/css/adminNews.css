@@ -92,6 +92,27 @@
     background-color: #07466e;
 }
 
+.createNewsButton { /* форма для кнопки */
+    font-family: 'Lora', serif;
+    border: 0; /* убирает ебучую рамку */
+    font-weight: 400; /* толщина шрифта */
+    border-radius: 5px; /* радиус закругления у углов кнопки */
+    background: #086aaa; /* цвет внутри кнопки */
+    color: #ffffff;
+    font-size: 16px; /* размер шрифта  */
+    width: 200px; /* размер кнопки в длину */
+    padding: 6px 0; /* высота кнопки  */
+    text-transform: uppercase; /* преобразовани шрифта (типо caps lock) */
+    cursor: pointer; /* при наведении на кнопку меняется значок */
+    -webkit-transition: all 0.4s ease-out; /* делает медленный переход при наведении */
+    transition: all 0.4s ease-out;
+}
+
+.createNewsButton:hover { /* изменение цвета кнопки вход при наведении */
+    background-color: #07466e;
+}
+
+
 .cancelNewsButton { /* форма для кнопки */
     font-family: 'Lora', serif;
     border: 0; /* убирает ебучую рамку */
