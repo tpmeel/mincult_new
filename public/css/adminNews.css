@@ -1,0 +1,135 @@
+
+
+.tableNewsColumnDate {
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+    text-overflow: ellipsis; /* Добавляем многоточие */
+    width: 100px;
+}
+
+.tableNewsColumnTitle {
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+    text-overflow: ellipsis; /* Добавляем многоточие */
+    width: 360px;
+}
+
+.tableNewsColumnDate {
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+    text-overflow: ellipsis; /* Добавляем многоточие */
+    width: 100px;
+}
+
+.hideNewsFormInput {
+    bottom: 0; /* отступ текста от края формы */
+    margin-bottom: 20px;
+    width: 650px;
+    height: 40px; /* высота закрытой формы */
+    padding-left: 25px; /* отступ текста внутри формы слева от края формы */
+    border: 0; /* убираем ебучую толщину рамки */
+    border-radius: 2px; /* радиус закругления рамки */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* тень рамки */
+    font-size: 15px; /*  высота шрифта внутри формы */
+    outline: none;
+    font-size: 20px;
+
+}
+
+.hideNewsFormTextarea {
+    width: 650px;
+    height: 300px;
+    min-height: 50px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: #444;
+    padding: 5px;
+    border: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* тень рамки */
+    outline: none;
+}
+
+.titleNewsEditing {
+    padding-top: 40px;
+    padding-bottom: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+}
+
+.contentNewsEditing {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+}
+
+.hideNewsFormDate {
+    font-size: 20px;
+    padding-bottom: 30px;
+}
+
+.buttonNewsHolder {
+    padding-bottom: 50px;
+}
+
+.dataNewsButton { /* форма для кнопки */
+    font-family: 'Lora', serif;
+    border: 0; /* убирает ебучую рамку */
+    font-weight: 400; /* толщина шрифта */
+    border-radius: 5px; /* радиус закругления у углов кнопки */
+    background: #086aaa; /* цвет внутри кнопки */
+    color: #ffffff;
+    font-size: 18px; /* размер шрифта  */
+    width: 250px; /* размер кнопки в длину */
+    padding: 7px 0; /* высота кнопки  */
+    text-transform: uppercase; /* преобразовани шрифта (типо caps lock) */
+    cursor: pointer; /* при наведении на кнопку меняется значок */
+    -webkit-transition: all 0.4s ease-out; /* делает медленный переход при наведении */
+    transition: all 0.4s ease-out;
+}
+
+.dataNewsButton:hover { /* изменение цвета кнопки вход при наведении */
+    background-color: #07466e;
+}
+
+.cancelNewsButton { /* форма для кнопки */
+    font-family: 'Lora', serif;
+    border: 0; /* убирает ебучую рамку */
+    font-weight: 400; /* толщина шрифта */
+    border-radius: 5px; /* радиус закругления у углов кнопки */
+    background: #bbbbbb; /* цвет внутри кнопки */
+    color: #ffffff;
+    font-size: 18px; /* размер шрифта  */
+    width: 150px; /* размер кнопки в длину */
+    /* margin-left: 70px; */
+    padding: 7px 0; /* высота кнопки  */
+    text-transform: uppercase; /* преобразовани шрифта (типо caps lock) */
+    cursor: pointer; /* при наведении на кнопку меняется значок */
+    -webkit-transition: all 0.4s ease-out; /* делает медленный переход при наведении */
+    transition: all 0.4s ease-out;
+}
+
+.cancelNewsButton:hover { /* изменение цвета кнопки вход при наведении */
+    background-color: #6c6c6c;
+}
+
+.deleteNewsButton { /* форма для кнопки */
+    font-family: 'Lora', serif;
+    border: 0; /* убирает ебучую рамку */
+    font-weight: 400; /* толщина шрифта */
+    border-radius: 5px; /* радиус закругления у углов кнопки */
+    background: #d53b37; /* цвет внутри кнопки */
+    color: #ffffff;
+    font-size: 18px; /* размер шрифта  */
+    width: 200px; /* размер кнопки в длину */
+    margin-left: 20px;
+    padding: 7px 0; /* высота кнопки  */
+    text-transform: uppercase; /* преобразовани шрифта (типо caps lock) */
+    cursor: pointer; /* при наведении на кнопку меняется значок */
+    -webkit-transition: all 0.4s ease-out; /* делает медленный переход при наведении */
+    transition: all 0.4s ease-out;
+}
+
+.deleteNewsButton:hover { /* изменение цвета кнопки вход при наведении */
+    background-color: #ad3430;
+}
