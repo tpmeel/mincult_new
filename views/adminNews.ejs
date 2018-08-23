@@ -1,0 +1,288 @@
+<% include partials/adminHeader %>
+
+<section id="content__personal" class="content">
+    <div id="main__content" class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <ul class="accordion-menu">
+                    <li>
+                        <a class="link" href="/">
+                            <div class="dropdownlink"><i class="fa fa-road" aria-hidden="true"></i>
+                                Главная страница
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="link" href="#">
+                            <div class="dropdownlink"><i class="fa fa-road" aria-hidden="true"></i>
+                                Список экспертов
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <div class="dropdownlink"><i class="fa fa-quote-left" aria-hidden="true"></i>
+                            Список олимпиад
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                        <ul class="submenuItems">
+                            <li><a href="#">олимпиада 1</a></li>
+                            <li><a href="#">олимпиада 2</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a class="link" href="#">
+                            <div class="dropdownlink"><i class="fa fa-road" aria-hidden="true"></i>
+                                Редактирование новостей
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="content__text__personal">
+                    <div class="admin__olympiad__padding">
+
+                        <!-- див, который мы прячем (список учеников)-->
+                        <div id="hideTable">
+
+                            <div class="olympiad__name">
+                                Список новостей
+                            </div>
+
+
+                            <%
+                            var jsonListOfNews =  {
+                                "ListOfNews": [{
+                                    "idN" : 12,
+                                    "title" : "Составлять фитомодули научились участники проекта \"Экосубботы московских школьников\" ",
+                                    "date": "19.08.2015"
+                                }, {
+                                    "idN" : 331,
+                                    "title" : "1, 2 и 3 места в различных видах соревнований XII Туристского слёта учащихся Союзного государства заняли обучающиеся нашего центра.",
+                                    "date": "19.08.2015"
+                                },
+                                    {
+                                    "idN" : 141,
+                                    "title" : "Рептилии в гостях у участников проекта \"Экосубботы московских школьников\". 28 июля в нашем центре.",
+                                    "date": "19.08.2015"
+                                }]
+                            };
+                            %>
+
+
+                            <table class="tableSchoolboy" id="Schoolboys">
+                                <tr>
+                                    <th>Заголовок</th>
+                                    <th>Дата</th>
+                                    <th>Редактирование</th>
+                                </tr>
+
+
+                                <% if (jsonListOfNews.ListOfNews.length > 0){
+                                for (var i = 0; i < jsonListOfNews.ListOfNews.length; i++) { %>
+
+                                <tr>
+                                    <td>
+                                        <p  class="tableNewsColumnTitle">
+                                            <%= jsonListOfNews.ListOfNews[i].title%>
+                                        </p>
+                                    </td>
+                                    <td>
+                                           <p class="tableNewsColumnDate">
+                                            <%= jsonListOfNews.ListOfNews[i].date%>
+                                           </p>
+                                    </td>
+                                    <th id="tableButton">
+                                        <button id="<%= jsonListOfNews.ListOfNews[i].idN%>" class="tableSchoolboyButton" type="submit">
+                                            ИЗМЕНИТЬ
+                                        </button>
+                                    </th>
+                                </tr>
+
+                                <%  }
+                                } else { %>
+
+                                <p>
+                                    НЕТ НОВОСТЕЙ
+                                </p>
+
+                                <% } %>
+
+                            </table>
+
+                        </div>
+
+
+                        <div id="hideNewsForm" class="hide">
+
+                        <form name="newsForm">
+
+                            <div class="titleNewsEditing">
+                                Заголовок новости
+                            </div>
+
+                            <input type="text" class="hideNewsFormInput" name="inputNewsText" id="inputNewsText" value="" >
+
+                            <div class="contentNewsEditing">
+                                Содержание новости
+                            </div>
+
+                            <textarea class="hideNewsFormTextarea" name="inputNewsTextarea" id="inputNewsTextarea"></textarea>
+
+                            <div class="titleNewsEditing">
+                                Дата создания новости
+                            </div>
+
+                            <div class="hideNewsFormDate" id="hideNewsFormDate" name="hideNewsFormDate">
+                                date
+                            </div>
+
+                            <div class="buttonNewsHolder">
+                                <div class="d-flex flex-row">
+                                    <div class="p-2">
+                                        <button class="dataNewsButton" type="submit">
+                                            Сохранить изменения
+                                        </button>
+                                    </div>
+                                    <div class="p-2">
+                                        <button class="cancelNewsButton" type="submit">
+                                            Отмена
+                                        </button>
+                                    </div>
+                                    <div class="p-2">
+                                        <button class="deleteNewsButton" type="submit">
+                                            Удалить новость
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- скрипт для получения выбранного option -->
+
+
+<!-- скрипт для кнопки изменить-->
+<script>
+
+    $(document).ready(function(){
+
+        $('.tableSchoolboyButton').click(function(e) {
+
+            window.selectedButtonId =  $(this).attr('id');
+            // e.preventDefault();
+
+
+            var data = {};
+            data.id = selectedButtonId;
+            data.some = 'some text value';
+
+
+            $.ajax({
+                type: 'POST',
+                data: JSON.stringify(data),
+                contentType: 'application/json',
+                url: '/news',
+                success: function(data) {
+
+                    var jsonNewsTitle = document.getElementById("inputNewsText");
+                    jsonNewsTitle.value = data.title;
+
+                    var jsonNewsText = document.getElementById("inputNewsTextarea");
+                    jsonNewsText.innerHTML = data.content;
+
+                    var jsonNewsDate = document.getElementById("hideNewsFormDate");
+                    jsonNewsDate.innerHTML = data.date;
+
+                    console.log('success');
+
+                    $("#hideTable").addClass("hide");
+                    $("#hideNewsForm").removeClass("hide");
+
+
+                }
+            });
+        });
+    });
+</script>
+
+
+<!-- скрипт для кнопки сохранить изменения-->
+<script>
+    $(document).ready(function(){
+        $('.dataSchoolboyButton').click(function(e) {
+
+            // var selectedButtonId =  $(this).attr('id');
+            // e.preventDefault();
+            var NewsForm = document.forms["newsForm"];
+
+            var idN = selectedButtonId;
+            var title = NewsForm.elements["inputNewsText"].value;
+            var content = NewsForm.elements["inputNewsTextarea"].value;
+            var date = NewsForm.elements["hideNewsFormDate"].value;
+
+            $.ajax({
+                type: 'POST',
+                data:
+                    {
+                        idN: idN,
+                        title: title,
+                        content: content,
+                        date: date
+                    },
+                contentType: 'application/json',
+                url: '/personalOlympiadSucceed',
+                success: function(somethind) {
+
+
+
+                    $("#hideSchoolboy").addClass("hide");
+                    $("#hideTable").removeClass("hide");
+
+
+                    console.log('success');
+                }
+            });
+
+        });
+    });
+</script>
+
+<!-- скрипт для кнопки отменить-->
+<script>
+    $(document).ready(function(){
+        $('.cancelSchoolboyButton').click(function(e) {
+
+            $("#hideSchoolboy").addClass("hide");
+            $("#hideTable").removeClass("hide");
+
+
+        });
+    });
+</script>
+
+<section id="basement" class="basement"> <!-- подвал -->
+    <div class="container"> <!--  -->
+        <div class="row">
+            <div class="col-lg-12"> <!--  -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<% include partials/footer %>
