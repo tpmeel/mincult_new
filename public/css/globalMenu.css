@@ -77,3 +77,9 @@ a {
     background-color: #07639a;
     color: #fff;
 }
+
+.adminEntry {
+    padding-left:1150px;  /* отступ  */
+    background: #e6e6e6;
+    color: #6f6f6f;
+}
