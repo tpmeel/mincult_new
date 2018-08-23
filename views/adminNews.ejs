@@ -56,6 +56,9 @@
                                 Список новостей
                             </div>
 
+                            <button class="createNewsButton" type="submit">
+                                Создать новость
+                            </button>
 
                             <%
                             var jsonListOfNews =  {
@@ -124,6 +127,7 @@
 
                         <form name="newsForm">
 
+
                             <div class="titleNewsEditing">
                                 Заголовок новости
                             </div>
@@ -141,7 +145,7 @@
                             </div>
 
                             <div class="hideNewsFormDate" id="hideNewsFormDate" name="hideNewsFormDate">
-                                date
+                                Дата
                             </div>
 
                             <div class="buttonNewsHolder">
@@ -222,6 +226,40 @@
 </script>
 
 
+
+
+
+<!-- скрипт для кнопки создать новость-->
+<script>
+
+    window.today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
+    var yyyy = today.getFullYear();
+    if(dd<10) {
+        dd = '0'+dd
+    }
+    if(mm<10) {
+        mm = '0'+mm
+    }
+    today = mm + '.' + dd + '.' + yyyy;
+
+
+    $(document).ready(function(){
+
+        $('.createNewsButton').click(function(e) {
+
+            var jsonNewsDate = document.getElementById("hideNewsFormDate");
+            jsonNewsDate.innerHTML = today;
+
+            $("#hideTable").addClass("hide");
+            $("#hideNewsForm").removeClass("hide");
+
+        });
+    });
+</script>
+
+
 <!-- скрипт для кнопки сохранить изменения-->
 <script>
     $(document).ready(function(){
@@ -263,6 +301,7 @@
     });
 </script>
 
+
 <!-- скрипт для кнопки отменить-->
 <script>
     $(document).ready(function(){
@@ -286,3 +325,4 @@
 </section>
 
 <% include partials/footer %>
+
