@@ -1,4 +1,52 @@
 
+/*
+адаптисность
+*/
+
+@media screen and (max-width: 770px) {
+    .organizationName__organization a{
+        font-size: 18px;
+    }
+    .organizationName__department a {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 770px) and (max-width:850px) {
+    .organizationName__organization a{
+        font-size: 19px;
+    }
+}
+
+@media screen and (max-width:660px) {
+    .logo {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width:660px) {
+    .organizationName__organization a{
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 550px) and (max-width:660px) {
+    .organizationName__organization a{
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width:550px) {
+    .organizationName__organization a{
+        font-size: 19px;
+    }
+}
+
+/*
+адаптисность закончилась
+*/
+
+
 
 #content {
     background: #f3f3f3;
@@ -6,11 +54,17 @@
 }
 
 .newsMainTitle {
+    width: 800px;
     padding-top: 20px;
     padding-left: 30px;
     padding-right: 40px;
     font-family: 'Roboto Slab', serif;
     font-size: 22px;
+}
+
+.newsMainTitleHr {
+    padding-left: 30px;
+    padding-right: 40px;
 }
 
 .content__text {
@@ -82,7 +136,6 @@
 
 .newsMainButtonMore {
     margin-bottom: 30px;
-    margin-left: 300px;
     font-family: 'Lora', serif;
     border: 0; /* убирает ебучую рамку */
     font-weight: 400; /* толщина шрифта */
