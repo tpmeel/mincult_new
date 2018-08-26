@@ -2,12 +2,13 @@
 <!-- подключение шапки -->
 <% include partials/header %>
 
+
 <section id="department" class="department">
     <div id="department__border" class="container"> <!-- все по классике (если непонятно, смотри выше) -->
         <div class="row">
-            <div class="col-lg-11"> <!-- надписи (без лого и кнопок) хэдэра занимают занимает 7 колонок -->
+            <div class="col-lg-12"> <!-- надписи (без лого и кнопок) хэдэра занимают занимает 7 колонок -->
                 <div class="department__content d-flex align-items-center">
-                    <div class="logo d-flex justify-content-center"> <!-- класс логотипа -->
+                    <div class="logo"> <!-- класс логотипа -->
                         <!-- подключаем логотип URL ссылкой с сайта, с которого сдираем -->
                         <a href="http://localhost:3000/">
                         <img src="http://mducekt.mskobr.ru/images/cms/thumbs/1f1204c38f5d7f50f0ab6bcf597ef97666ee60e8/1423660333_jpg_250_135.jpg" alt="logo" class="logo">
@@ -38,9 +39,8 @@
 <section id="content" class="content">
     <div id="main__content" class="container">
         <div class="row">
-            <div class="d-flex align-items-start">
 
-                <div class="col-lg-4">
+                <div class="mainContentMenuPadding col-lg-4 col-md-12">
                     <ul class="accordion-menu">
                         <li>
                             <a class="link" href="">
@@ -59,18 +59,16 @@
                             <ul class="submenuItems">
                                 <li><a href="#">Основная информация</a></li>
                                 <li><a href="#">Контакты</a></li>
-                                <li><a href="#">За ворфэйс!1!!</a></li>
+                                <li><a href="#">Другое</a></li>
                             </ul>
                         </li>
                         <li>
-                            <div class="dropdownlink"><i class="fa fa-quote-left" aria-hidden="true"></i>
-                                Список олимпиад
-                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                            </div>
-                            <ul class="submenuItems">
-                                <li><a href="#">олимпиада 1</a></li>
-                                <li><a href="#">олимпиада 2</a></li>
-                            </ul>
+                            <a class="link" href="">
+                                <div class="dropdownlink"><i class="fa fa-road" aria-hidden="true"></i>
+                                    Олимпиады
+                                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                </div>
+                            </a>
                         </li>
                         <li>
                             <div class="dropdownlink"><i class="fa fa-motorcycle" aria-hidden="true"></i>
@@ -90,56 +88,18 @@
                         <ul class="text d-flex flex-column" >
 
                             <li class="newsMainTitle">
-                                Новости
-                                <hr>
+                                 Новости
                             </li>
 
-                            <% var newsBlock = {
-                                "news": [{
-                                    "idN" : 0,
-                                    "title": "Макет кабины космического корабля «Буран» покажут школьникам на Космической субботе",
-                                    "date": "14.08.2018",
-                                    "content" : "«Космическая суббота» для школьников и жителей столицы пройдет 18 августа на базе Центрального Дома авиации и космонавтики в рамках образовательного проекта Департамента образования «Субботы московского школьника». Об этом сообщили в пресс-службе Департамента образования."
-                                }, {
-                                    "idN" : 1,
-                                    "title": "На форуме «Город образования» представят новые возможности для самостоятельной проверки знаний",
-                                    "date": "12.08.2018",
-                                    "content" : "Обновленный функционал интерактивного сервиса самоподготовки и самопроверки «Мои достижения» презентуют на Московском международном форуме «Город образования», который пройдет с 30 августа по 2 сентября в 75 павильоне ВДНХ. Посетители стенда «Мои достижения в моём городе» смогут первыми ознакомиться с новыми шаблонами заданий, которые представлены в сервисе. Теперь стали доступны опции перетаскивания объектов, которые необходимо разместить в определённой последовательности или в правильной ячейке таблицы. Также можно работать с географическими и историческими картами и графическими объектами.  Кроме этого, теперь в сервисе представлены задания на работу с многостраничной информацией. \n"
-                                }, {
-                                    "idN" : 2,
-                                    "title": "Выступление начальника Управления координации государственной программы ДОгМ А.С. Тверского на селекторном совещании Департамента образования Москвы",
-                                    "date": "11.08.2018",
-                                    "content" : "Начальник Управления координации государственной программы ДОгМ А.С. Тверской рассказывает о субботах московских школьников на селекторном совещании Департамента образования Москвы."
-                                    }]
-                            };
 
-                            if (newsBlock.news.length > 0){
-                                for (var i = 0; i < newsBlock.news.length; i++) { %>
 
-                            <div id="newsTitleHide">
 
-                                <li class="content__about__news__date">
-                                    <%= newsBlock.news[i].date %>
-                                </li>
 
-                                <li  class="content__about__title" id="<%= newsBlock.news[i].idN%>" >
-                                        <%= newsBlock.news[i].title %>
-                                    <hr>
-                                </li>
 
-                            </div>
 
-                            <%  }
-                            } else { %>
 
-                            <p>
-                                НЕТ НОВОСТЕЙ
-                            </p>
-
-                            <% } %>
-
-                            <li class="newsMainButton">
-                                <button class="newsMainButtonMore" type="submit">
+                            <li class="newsMainButton d-flex justify-content-center">
+                                <button class="newsMainButtonMore " type="submit">
                                     Больше
                                 </button>
                             </li>
@@ -147,7 +107,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+
         </div>
     </div>
 </section>
@@ -163,7 +123,7 @@
             window.selectedButtonId =  $(this).attr('id');
             // e.preventDefault();
 
-            var newsLink = "main" + "/news:" + selectedButtonId;
+            var newsLink = "/news/id :" + selectedButtonId;
             location.href = newsLink;
 
 
@@ -174,10 +134,11 @@
 
 <% include partials/footer %>
 
+
 <div class="container-fluid">
     <div class="adminEntry d-flex flex-row-reverse">
         <div class="p-2">
-            <a href="/signinAdmin">
+            <a href="/admin/signin">
                 Войти в личный кабинет
             </a>
         </div>
