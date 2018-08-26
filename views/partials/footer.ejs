@@ -1,31 +1,32 @@
+
 <div id="basement" class="basement"> <!-- подвал -->
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-12">
                 <div class="basement__padding">
-                    <div class="d-flex flex-row">
+                    <div class="d-flex flex-wrap justify-content-center">
                         <a class="basement__links" href="#">
-                            <div class="p-2">
+                            <div class="basementLinksText p-2">
                                 Олимпиады
                             </div>
                         </a>
                         <a class="basement__links" href="#">
-                            <div class="p-2">
+                            <div class="basementLinksText p-2">
                                 О платформе
                             </div>
                         </a>
                         <a class="basement__links" href="#">
-                            <div class="p-2">
+                            <div class="basementLinksText p-2">
                                 Конфеденциальность
                             </div>
                         </a>
                         <a class="basement__links" href="#">
-                            <div class="p-2">
+                            <div class="basementLinksText p-2">
                                 Справка
                             </div>
                         </a>
                         <a class="basement__links" href="#">
-                            <div class="p-2">
+                            <div class="basementLinksText p-2">
                                 Обратная связь
                             </div>
                         </a>
@@ -38,13 +39,12 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="basement__padding">
-
+                <div class="d-flex justify-content-center">
                     <!-- далее кусок для определения, какой сейчас год -->
 
                     <%
-                      var year = new Date();
-                      year = year.getFullYear();
+                    var year = new Date();
+                    year = year.getFullYear();
                     %>
 
                     <!-- вставляем его в div -->
