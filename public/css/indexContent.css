@@ -154,3 +154,11 @@
 .newsMainButtonMore:hover { /* изменение цвета кнопки вход при наведении */
     background-color: #6c6c6c;
 }
+
+.content__about__olympiad {
+    font-family: 'Lora', serif;
+    font-size: 16px; /* размер шрифта  */
+    padding-left: 40px;
+    padding-right: 30px;
+
+}
