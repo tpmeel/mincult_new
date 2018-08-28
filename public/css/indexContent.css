@@ -56,8 +56,8 @@
 .newsMainTitle {
     width: 800px;
     padding-top: 20px;
-    padding-left: 30px;
-    padding-right: 40px;
+    padding-left: 40px;
+    padding-right: 100px;
     font-family: 'Roboto Slab', serif;
     font-size: 22px;
 }
@@ -161,4 +161,19 @@
     padding-left: 40px;
     padding-right: 30px;
 
+}
+
+/*на странице mainOlympiadSection*/
+.newsMainNomination {
+    width: 800px;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    padding-right: 100px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 18px;
+}
+
+.centr {
+    text-align: center;
+    padding-bottom: 20px;
 }
