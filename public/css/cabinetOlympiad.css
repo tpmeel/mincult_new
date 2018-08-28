@@ -1,10 +1,23 @@
 
-.
 .olympiad__name {
     padding-top: 20px;
     padding-bottom: 15px;
     font-weight: 700;
     font-size: 20px;
+    font-family: 'Roboto Slab', serif;
+}
+
+.olympiad__name__description {
+    padding-bottom: 15px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 17px;
+    padding-right: 30px;
+}
+
+.olympiad__name__text {
+    padding-bottom: 15px;
+    font-size: 17px;
+    padding-right: 30px;
 }
 
 .olympiad__padding {
