@@ -32,8 +32,36 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* тень рамки */
     font-size: 15px; /*  высота шрифта внутри формы */
     outline: none;
-    font-size: 20px;
+}
 
+#contentNewsEditingInput {
+    bottom: 0; /* отступ текста от края формы */
+    margin-bottom: 20px;
+    width: 650px;
+    height: 40px; /* высота закрытой формы */
+    padding-left: 25px; /* отступ текста внутри формы слева от края формы */
+    border: 0; /* убираем ебучую толщину рамки */
+    border-radius: 2px; /* радиус закругления рамки */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* тень рамки */
+    font-size: 15px; /*  высота шрифта внутри формы */
+    outline: none;
+}
+
+#contentNewsEditingTextarea {
+    width: 650px;
+    height: 300px;
+    min-height: 50px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: #444;
+    padding: 5px;
+    border: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* тень рамки */
+    outline: none;
+}
+
+#createHr {
+    margin-right: 50px;
 }
 
 .hideNewsFormTextarea {
@@ -154,3 +182,6 @@
 .deleteNewsButton:hover { /* изменение цвета кнопки вход при наведении */
     background-color: #ad3430;
 }
+
+
+
