@@ -1,0 +1,140 @@
+<% include partials/header %>
+
+<section id="content__personal" class="content">
+    <div id="main__content" class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <ul class="accordion-menu">
+                    <li>
+                        <a class="link" href="/">
+                            <div class="dropdownlink"><i class="fa fa-road" aria-hidden="true"></i>
+                                Главная страница
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="link" href="/admin">
+                            <div class="dropdownlink"><i class="fa fa-road" aria-hidden="true"></i>
+                                Список участников
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="link" href="/admin/experts">
+                            <div class="dropdownlink"><i class="fa fa-road" aria-hidden="true"></i>
+                                Список экспертов
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="link" href="/admin/edit">
+                            <div class="dropdownlink"><i class="fa fa-road" aria-hidden="true"></i>
+                                Редактирование новостей
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <div class="dropdownlink"><i class="fa fa-quote-left" aria-hidden="true"></i>
+                            Список олимпиад
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                        <ul class="submenuItems">
+                            <li><a href="#">олимпиада 1</a></li>
+                            <li><a href="#">олимпиада 2</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="content__text__personal">
+                    <div class="admin__olympiad__padding">
+                        <form name="newsForm" method="POST" action="/admin/olympiad/new">
+                            <div class="titleNewsEditing">
+                                Укажите название олимпиады:
+                            </div>
+
+                            <input type="text" class="hideNewsFormInput" name="title" id="inputNewsText" value="" >
+
+                            <div class="contentNewsEditing">
+                                Добавьте описание олимпиады:
+                            </div>
+
+                            <textarea class="hideNewsFormTextarea" name="description" id="inputNewsTextarea" style="font-family: tahoma; font-size: 20px;"></textarea>
+
+                            <div class="contentNewsEditing">
+                                Укажите колчиство секций, заполните название каждой секции и добавьте краткое описание для каждой из них:
+                            </div>
+
+                            <div class="appendHr">
+                                <input type="text" max="9" class="hideNewsFormInput" name="count" id="inputNewOlymp" value="" format="дд/мм/гггг" >
+                                <br>
+                                <b style="display:block">..</b>
+                            </div>
+
+                            <div class="buttonNewsHolder">
+                                <div class="d-flex flex-row">
+                                    <div class="p-2">
+                                        <button class="dataNewsButton" type="submit">
+                                            Создать олимпиаду
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<script>
+    var input = document.querySelector("input[id='inputNewOlymp']"),
+        log = document.querySelector('b');
+
+    input.onkeyup = function() {
+
+        if (/\D/.test(input.value)) {
+            alert('Вводить можно только число ');
+            return;
+        }
+
+        var i = 0;
+        var g = document.createDocumentFragment();
+        var m;
+
+        while( i++ < parseInt( input.value ) ){
+            m = document.createElement('input');
+            m.name = 'sectionTitle_' + i;
+            m.id = 'contentNewsEditingInput';
+            m.className = "contentNewsEditing";
+            m.placeholder = "Название секции";
+            t = document.createElement('textarea');
+            t.name = 'sectionDescription_' + i;
+            t.id = 'contentNewsEditingTextarea';
+            t.сlassName = 'contentNewsEditing';
+            t.placeholder = "Описание секции";
+            s = document.createElement('hr');
+            s.id = 'createHr'
+            g.appendChild( m );
+            g.appendChild(t);
+            g.appendChild(s);
+
+
+        }
+        log.innerHTML = '';
+        log.appendChild( g );
+    }
+</script>
+
+<% include partials/footer %>
