@@ -91,11 +91,44 @@
                                  Новости
                             </li>
 
+                            <li class="newsMainTitleHr">
+                                <hr>
+                            </li>
 
 
+                            <% var newsBlock = {
+                                "news": [{
+                                    "_id" : 0,
+                                    "title": "Title",
+                                    "date": "14.08.2018",
+                                    "content" : "Content"
+                                }]
+                            };
 
+                            if (newsBlock.news.length > 0){
+                            for (var i = 0; i < newsBlock.news.length; i++) { %>
 
+                            <div id="newsTitleHide">
 
+                                <li class="content__about__news__date">
+                                    <%= newsBlock.news[i].date %>
+                                </li>
+
+                                <li  class="content__about__title" id="<%= newsBlock.news[i]._id%>" >
+                                    <%= newsBlock.news[i].title %>
+                                    <hr>
+                                </li>
+
+                            </div>
+
+                            <%  }
+                            } else { %>
+
+                            <p>
+                                НЕТ НОВОСТЕЙ
+                            </p>
+
+                            <% } %>
 
 
                             <li class="newsMainButton d-flex justify-content-center">
