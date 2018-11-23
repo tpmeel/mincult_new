@@ -1,0 +1,74 @@
+<% include partials/headerAuth%>
+
+<section id="content__personal" class="content">
+    <div id="main__content" class="container">
+        <div class="row">
+           
+            <!-- Меню для страниц школьника -->
+            <% include partials/schoolboyMenu%>
+
+             <div class="col-lg-8">
+                <div class="content__text">
+                    <ul class="text d-flex flex-column" >
+
+                        <li class="newsMainTitle">
+                            Секции
+                        </li>
+
+                        <li class="newsMainTitleHr">
+                            <hr>
+                        </li>
+
+                        <%
+
+                        if (sections.length > 0){
+                        for (var i = 0; i < sections.length; i++) { %>
+
+                        <div id="newsTitleHide">
+
+                            <a  href="<%= sections[i].link %>">
+
+                                <li  class="content__about__title" >
+                                    <%= sections[i].name %>
+                                </li>
+
+                            </a>
+                            <hr>
+
+                        </div>
+
+                        <%  }
+                        } else { %>
+
+                        <p>
+                            НЕТ Олимпиад
+                        </p>
+
+                        <% } %>
+
+
+
+                        <li class="newsMainButton d-flex justify-content-center">
+                            <button class="newsMainButtonMore " type="submit">
+                                Больше
+                            </button>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<section id="basement" class="basement"> <!-- подвал -->
+    <div class="container"> <!--  -->
+        <div class="row">
+            <div class="col-lg-12"> <!--  -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<% include partials/footer %>
