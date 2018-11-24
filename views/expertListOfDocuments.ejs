@@ -1,0 +1,62 @@
+<% include partials/headerExpert%>
+
+<section id="content__personal" class="content">
+    <div id="main__content" class="container">
+        <div class="row">
+           
+            <!-- Подключение меню для страницы эксперта -->
+            <% include partials/expertMenu %>
+
+             <div class="col-lg-8">
+                <div class="content__text__personal">
+                    <div class="olympiad__padding">
+
+                        <div class="olympiad__name">
+                            История России
+                        </div>
+                        <%
+                        if (documents.length > 0){
+                        for (var i = 0; i < documents.length; i++) { %>
+
+                        <div class="doc-holder d-flex flex-column">
+                            <div class="doc p-2">
+                                <hr/>
+                                <div class="doc__content d-flex justify-content-start">
+                                    <div class="doc__img mr-auto p-2">
+                                        <img src="https://png.icons8.com/color/48/000000/word.png">
+                                    </div>
+                                    <div class ="doc__link align-self-center mr-auto p-2">
+                                        <a href="<%= documents[i].link %>">
+                                            Текст работы <%= i + 1%>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <%  }
+                        } else { %>
+                        <p>
+                            NO DOCUMENTS
+                        </p>
+                        <% } %>
+
+
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<section id="basement" class="basement"> <!-- подвал -->
+    <div class="container"> <!--  -->
+        <div class="row">
+            <div class="col-lg-12"> <!--  -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<% include partials/footer %>
