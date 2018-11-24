@@ -1,0 +1,101 @@
+<% include partials/headerAuth%>
+
+<section id="content__personal" class="content">
+    <div id="main__content" class="container">
+        <div class="row">
+           
+            <!-- Меню для страниц школьника -->
+            <% include partials/schoolboyMenu%>
+
+            <div class="col-lg-8">
+                <div class="content__text__personal">
+                    <div class="admin__olympiad__padding">
+
+                        <!-- див, который мы прячем (список учеников)-->
+                        <div id="hideTable">
+
+                            <div class="olympiad__name">
+                                <%= nameOfSection %>
+                            </div>
+
+                            <table class="tableSchoolboy" id="Schoolboys">
+
+                                <tr>
+                                    <td>
+                                        <p  class="tableExpertColumnFIO">
+                                            Титульный лист работы :
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p class="tableExpertColumnStatus">
+                                            <a href=" <%= titlePage %> ">
+                                                <%= titlePage %>
+                                            </a>
+                                        </p>
+                                    </td>
+                                    <th id="tableButton">
+                                        <button id="сюда вставляешь ссыль на изменение титула" class="tableSchoolboyButton" type="submit">
+                                            ИЗМЕНИТЬ
+                                        </button>
+                                    </th>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <p  class="tableExpertColumnFIO">
+                                            Текст работы :
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p class="tableExpertColumnStatus">
+                                            <a href=" <%= documentText %> ">
+                                                <%= documentText %>
+                                            </a>
+                                        </p>
+                                    </td>
+                                    <th id="tableButton">
+                                        <button id="сюда вставляешь ссыль на изменение текста" class="tableSchoolboyButton" type="submit">
+                                            ИЗМЕНИТЬ
+                                        </button>
+                                    </th>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</section>
+
+
+<script>
+    $(document).ready(function(){
+
+        $('.tableSchoolboyButton').click(function(e) {
+
+
+            window.selectedButtonId =  $(this).attr('id');
+            console.log(selectedButtonId);
+
+            var olympiadLink = selectedButtonId;
+            location.href = olympiadLink;
+
+        });
+    });
+</script>
+
+
+<section id="basement" class="basement"> <!-- подвал -->
+    <div class="container"> <!--  -->
+        <div class="row">
+            <div class="col-lg-12"> <!--  -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<% include partials/footer %>
